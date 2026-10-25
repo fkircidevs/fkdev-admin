@@ -1,0 +1,14 @@
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://ui.fkdev.sbs https://code.jquery.com https://cdn.datatables.net 'sha256-CGGEJHfqC7+LiSARylTxPdCMaADvzU9UYiv/dnwTiYU='; style-src 'self' 'unsafe-inline' https://ui.fkdev.sbs https://fonts.googleapis.com https://cdn.datatables.net; img-src 'self' data: https://ui.fkdev.sbs; font-src https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/assets/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/404.html
+  X-Robots-Tag: noindex, follow

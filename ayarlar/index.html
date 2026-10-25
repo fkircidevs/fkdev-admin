@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>(function(d){var r=d.documentElement;r.classList.add('js');try{var t=localStorage.getItem('fk-theme');if(t==='dark'||t==='light')r.setAttribute('data-theme',t)}catch(e){}})(document)</script>
+  <title>Hesap Ayarları — fkdev Admin</title>
+  <meta name="description" content="Hesap ayarları: profil ve fotoğraf, tema ve bölge tercihleri, güvenlik (şifre, iki adımlı doğrulama, yedek kodlar, oturumlar, giriş geçmişi), bildirimler, faturalandırma, API anahtarları, entegrasyonlar, webhook, ekip ve hesap yönetimi.">
+  <meta name="author" content="Furkan Kırcı">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#050505" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://admin.fkdev.sbs/ayarlar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="fkdev Admin">
+  <meta property="og:url" content="https://admin.fkdev.sbs/ayarlar/">
+  <meta property="og:title" content="Hesap Ayarları — fkdev Admin">
+  <meta property="og:description" content="Hesap ayarları: profil ve fotoğraf, tema ve bölge tercihleri, güvenlik (şifre, iki adımlı doğrulama, yedek kodlar, oturumlar, giriş geçmişi), bildirimler, faturalandırma, API anahtarları, entegrasyonlar, webhook, ekip ve hesap yönetimi.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://ui.fkdev.sbs" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&amp;family=Geist:wght@300..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+  <script src="/assets/fkdev-yedek.js?v=1.0.0"></script>
+  <link rel="stylesheet" href="https://ui.fkdev.sbs/v2.4.1/fkdev-ui.min.css" integrity="sha384-ywbvrnvLBhspdz061sb4+HVmL4bAnbhyuwKyDq0qCBVdEeLw2Le+aT+M0XhiumnM" crossorigin="anonymous" data-fk-yedek="fkdev-ui.min.css">
+  <link rel="stylesheet" href="https://ui.fkdev.sbs/v2.4.1/fkdev-icons.css" integrity="sha384-7yUKhYWWrNB988JPR7B5hWqmWKk50ryeZ/b688YUSNn02PjgfTkhgNDnoRUX0w4V" crossorigin="anonymous" data-fk-yedek="fkdev-icons.css">
+  <link rel="stylesheet" href="/assets/admin.css?v=1.1.0">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://admin.fkdev.sbs/#website","url":"https://admin.fkdev.sbs/","name":"fkdev Admin","inLanguage":"tr-TR","publisher":{"@type":"Person","name":"Furkan Kırcı","url":"https://www.fkdev.sbs/"}},{"@type":"WebPage","@id":"https://admin.fkdev.sbs/ayarlar/#page","url":"https://admin.fkdev.sbs/ayarlar/","name":"Hesap Ayarları — fkdev Admin","description":"Hesap ayarları: profil ve fotoğraf, tema ve bölge tercihleri, güvenlik (şifre, iki adımlı doğrulama, yedek kodlar, oturumlar, giriş geçmişi), bildirimler, faturalandırma, API anahtarları, entegrasyonlar, webhook, ekip ve hesap yönetimi.","inLanguage":"tr-TR","dateModified":"2026-10-25","isPartOf":{"@id":"https://admin.fkdev.sbs/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Panel","item":"https://admin.fkdev.sbs/"},{"@type":"ListItem","position":2,"name":"Ayarlar","item":"https://admin.fkdev.sbs/ayarlar/"}]}]}</script>
+</head>
+<body class="fk-body fk-atmosphere">
+  <div class="fk-readbar" aria-hidden="true"></div>
+  <a class="skip" href="#icerik">İçeriğe atla</a>
+  <header class="fk-navbar" data-fk-autohide>
+    <div class="fk-navbar-in fk-glass">
+      <a class="fk-brand" href="/" aria-label="fkdev Admin ana sayfa"><b>fkdev <i>Admin</i></b><small>v1.0.0</small></a>
+      <nav class="fk-tabsbar" aria-label="Ana bölümler"><span class="fk-tabsbar-ind" aria-hidden="true"></span><a href="/">Panel</a><a href="/e-ticaret/">E-ticaret</a><a href="/crm/">CRM</a><a href="/siparisler/">Siparişler</a><a href="/dokumantasyon/">Belgeler</a></nav>
+      <div class="fk-navbar-tools">
+        <details class="fk-dropdown ad-tool-notif">
+          <summary class="fk-btn fk-btn-icon" aria-label="Bildirimler, 3 okunmamış"><i class="fk-i fk-i-bell" aria-hidden="true"></i><b class="ad-count" aria-hidden="true">3</b></summary>
+          <div class="fk-dropdown-menu ad-notif">
+            <div class="ad-notif-head"><span>Bildirimler</span><span>3 yeni</span></div>
+            <a href="/siparisler/"><i class="fk-i fk-i-bag" aria-hidden="true"></i><span>Yeni sipariş #FK-10480<small>2 dakika önce · ₺2.340</small></span></a>
+            <a href="/crm/"><i class="fk-i fk-i-briefcase" aria-hidden="true"></i><span>Teklif kabul edildi<small>Nova Yazılım · ₺84.000</small></span></a>
+            <a href="/urunler/"><i class="fk-i fk-i-package" aria-hidden="true"></i><span>Stok uyarısı<small>Geist Kapüşonlu · 12 adet</small></span></a>
+            <a class="ad-notif-all" href="/bildirimler/">Tümünü gör <i class="fk-i fk-i-arrow-r" aria-hidden="true"></i></a>
+          </div>
+        </details>
+        <button class="fk-btn fk-btn-icon" type="button" data-fk-theme-toggle aria-label="Temayı değiştir"><i class="fk-i fk-i-sun" aria-hidden="true"></i><i class="fk-i fk-i-moon" aria-hidden="true"></i></button>
+        <details class="fk-dropdown ad-tool-avatar">
+          <summary aria-label="Hesap menüsü"><span class="fk-avatar fk-avatar-sm" aria-hidden="true">FK</span></summary>
+          <div class="fk-dropdown-menu ad-user-menu">
+            <a href="/profil/"><i class="fk-i fk-i-user" aria-hidden="true"></i>Profil</a>
+            <a href="/ayarlar/"><i class="fk-i fk-i-settings" aria-hidden="true"></i>Ayarlar</a>
+            <a href="/ayarlar/#guvenlik"><i class="fk-i fk-i-shield" aria-hidden="true"></i>Güvenlik</a>
+            <a href="/dokumantasyon/"><i class="fk-i fk-i-book" aria-hidden="true"></i>Belgeler</a>
+            <hr>
+            <a href="/giris/" data-demo-logout><i class="fk-i fk-i-logout" aria-hidden="true"></i>Çıkış yap</a>
+          </div>
+        </details>
+        <button class="fk-btn fk-btn-icon fk-burger" type="button" data-fk-menu="#fk-menu" aria-label="Menüyü aç"><svg class="fk-i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg><svg class="fk-i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="fk-menu" id="fk-menu">
+    <div class="fk-menu-in">
+      <nav aria-label="Panel sayfaları">
+        <div class="fk-menu-list">
+          <a href="/" style="--i:0">Genel bakış <span>01</span></a>
+          <a href="/e-ticaret/" style="--i:1">E-ticaret analizi <span>02</span></a>
+          <a href="/crm/" style="--i:2">CRM analizi <span>03</span></a>
+          <a href="/siparisler/" style="--i:3">Siparişler <span>04</span></a>
+          <a href="/musteriler/" style="--i:4">Müşteriler <span>05</span></a>
+          <a href="/urunler/" style="--i:5">Ürünler <span>06</span></a>
+          <a href="/profil/" style="--i:6">Profil <span>07</span></a>
+          <a href="/bildirimler/" style="--i:7">Bildirimler <span>08</span></a>
+          <a href="/ayarlar/" style="--i:8" aria-current="page">Ayarlar <span>09</span></a>
+          <a href="/giris/" style="--i:9">Giriş <span>10</span></a>
+          <a href="/kayit/" style="--i:10">Kayıt <span>11</span></a>
+          <a href="/sifre-sifirla/" style="--i:11">Şifre sıfırlama <span>12</span></a>
+          <a href="/dogrulama/" style="--i:12">İki adımlı doğrulama <span>13</span></a>
+          <a href="/dokumantasyon/" style="--i:13">Belgeler <span>14</span></a>
+          <a href="/dokumantasyon/kurulum/" style="--i:14">Kurulum <span>15</span></a>
+          <a href="/dokumantasyon/datatables/" style="--i:15">DataTables ve PHP <span>16</span></a>
+          <a href="/dokumantasyon/cdn/" style="--i:16">CDN <span>17</span></a>
+          <a href="/dokumantasyon/guvenlik/" style="--i:17">Güvenlik <span>18</span></a>
+          <a href="/dokumantasyon/ikonlar/" style="--i:18">İkon servisi <span>19</span></a>
+          <a href="/lisans/" style="--i:19">Lisans (MIT) <span>20</span></a>
+        </div>
+      </nav>
+      <div class="fk-menu-foot"><a href="https://www.fkdev.sbs/">fkdev.sbs</a><a href="https://ui.fkdev.sbs/">ui.fkdev.sbs</a><a href="https://admin.fkdev.sbs/" aria-current="true">admin.fkdev.sbs</a><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>fkdevs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>ik@fkdev.sbs</span></div>
+    </div>
+  </div>
+  <main class="ad-main fk-wrap" id="icerik">
+      <header class="ad-head">
+        <nav class="fk-crumbs fk-glass" aria-label="Sayfa yolu"><ol><li><a href="/"><i class="fk-i fk-i-home" aria-hidden="true"></i><span>Panel</span></a></li><li class="fk-sep" aria-hidden="true"><i class="fk-i fk-i-chev" aria-hidden="true"></i></li><li><span aria-current="page">Ayarlar</span></li></ol></nav>
+        <p><span class="fk-eyebrow fk-glass">Hesap · Ayarlar</span></p>
+        <h1>Senin <em>panelin.</em></h1>
+        <p class="fk-lede">Profilini düzenle, tercihlerini ayarla, güvenliğini sıkılaştır, planını ve ekibini yönet.</p>
+        <div class="ad-actions"><a class="fk-btn fk-btn-ghost" href="/profil/"><i class="fk-i fk-i-user" aria-hidden="true"></i>Profilimi gör</a><a class="fk-btn fk-btn-ghost" href="/bildirimler/"><i class="fk-i fk-i-bell" aria-hidden="true"></i>Bildirimler</a></div>
+      </header>
+
+      <div class="ad-settings" data-fk-tabs data-ad-hash>
+        <div class="fk-tabsbar" role="tablist" aria-label="Ayar bölümleri">
+          <span class="fk-tabsbar-ind" aria-hidden="true"></span>
+          <button type="button" role="tab" id="t-profil" aria-controls="profil" aria-selected="true">Profil</button>
+          <button type="button" role="tab" id="t-tercihler" aria-controls="tercihler" aria-selected="false">Tercihler</button>
+          <button type="button" role="tab" id="t-guvenlik" aria-controls="guvenlik" aria-selected="false">Güvenlik</button>
+          <button type="button" role="tab" id="t-bildirim" aria-controls="bildirim" aria-selected="false">Bildirimler</button>
+          <button type="button" role="tab" id="t-fatura" aria-controls="fatura" aria-selected="false">Faturalandırma</button>
+          <button type="button" role="tab" id="t-api" aria-controls="api" aria-selected="false">API</button>
+          <button type="button" role="tab" id="t-entegrasyon" aria-controls="entegrasyon" aria-selected="false">Entegrasyonlar</button>
+          <button type="button" role="tab" id="t-ekip" aria-controls="ekip" aria-selected="false">Ekip</button>
+          <button type="button" role="tab" id="t-hesap" aria-controls="hesap" aria-selected="false">Hesap</button>
+        </div>
+
+        <!-- Profil -->
+        <div class="fk-tabs-panel is-active" id="profil" role="tabpanel" aria-labelledby="t-profil">
+          <div class="ad-split">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Profil bilgileri</h2><p>Ekibin ve müşterilerin görür</p></div></div>
+              <form class="fk-form" id="f-profil" data-fk-validate data-ad-save="profil" data-ad-msg="Profil kaydedildi">
+                <div class="fk-form-row">
+                  <div class="fk-field"><label class="fk-label" for="p-ad">Ad Soyad <span class="fk-req" aria-hidden="true">*</span></label><input type="text" class="fk-input" id="p-ad" value="Furkan Kırcı" required minlength="2" maxlength="60" autocomplete="name"><span class="fk-error"></span></div>
+                  <div class="fk-field"><label class="fk-label" for="p-kullanici">Kullanıcı adı <span class="fk-req" aria-hidden="true">*</span></label><div class="fk-affix"><span>@</span><input type="text" class="fk-input" id="p-kullanici" value="furkankirci" required pattern="[a-z0-9_.]{3,24}" autocomplete="username" data-fk-msg="3–24 karakter: küçük harf, rakam, nokta ya da alt çizgi."></div><span class="fk-error"></span></div>
+                </div>
+                <div class="fk-form-row">
+                  <div class="fk-field"><label class="fk-label" for="p-mail">E-posta <span class="fk-req" aria-hidden="true">*</span></label><input class="fk-input" id="p-mail" type="email" value="merhaba@fkdev.sbs" required autocomplete="email"><span class="fk-error"></span></div>
+                  <div class="fk-field"><label class="fk-label" for="p-tel">Telefon</label><input class="fk-input" id="p-tel" type="tel" value="" placeholder="+90 5xx xxx xx xx" pattern="[\+0-9 \(\)\-]{10,20}" autocomplete="tel" data-fk-msg="Geçerli bir telefon numarası yaz."><span class="fk-error"></span></div>
+                </div>
+                <div class="fk-form-row">
+                  <div class="fk-field"><label class="fk-label" for="p-unvan">Unvan</label><input type="text" class="fk-input" id="p-unvan" value="Kurucu · Yazılım geliştirici" maxlength="60" autocomplete="organization-title"></div>
+                  <div class="fk-field"><label class="fk-label" for="p-sirket">Şirket</label><input type="text" class="fk-input" id="p-sirket" value="fkdev" maxlength="60" autocomplete="organization"></div>
+                </div>
+                <div class="fk-form-row">
+                  <div class="fk-field"><label class="fk-label" for="p-konum">Konum</label><input type="text" class="fk-input" id="p-konum" value="Bursa, Türkiye" maxlength="60" autocomplete="address-level2"></div>
+                  <div class="fk-field"><label class="fk-label" for="p-site">Web sitesi</label><div class="fk-affix"><span>https://</span><input type="text" class="fk-input" id="p-site" value="www.fkdev.sbs" pattern="[A-Za-z0-9\-]+(\.[A-Za-z0-9\-]+)+(\/\S*)?" data-fk-msg="Geçerli bir alan adı yaz." autocomplete="url"></div><span class="fk-error"></span></div>
+                </div>
+                <div class="fk-field" data-fk-counter><label class="fk-label" for="p-bio">Biyografi</label><textarea class="fk-textarea" id="p-bio" maxlength="160">Yazılımcı · Stratejist · Motivasyon Koçu</textarea><span class="fk-counter"></span></div>
+                <div class="fk-form-row">
+                  <div class="fk-field"><label class="fk-label" for="p-github">GitHub</label><div class="fk-affix"><span>github.com/</span><input type="text" class="fk-input" id="p-github" value="furkankirci"></div></div>
+                  <div class="fk-field"><label class="fk-label" for="p-linkedin">LinkedIn</label><div class="fk-affix"><span>in/</span><input type="text" class="fk-input" id="p-linkedin" value="furkankirci"></div></div>
+                </div>
+                <label class="fk-switch"><input type="checkbox" role="switch" id="p-acik" checked> Profilim ekip dışındaki kişilere de görünsün</label>
+                <div class="fk-cluster"><button class="fk-btn fk-btn-primary" type="submit">Kaydet</button><a class="fk-btn fk-btn-ghost" href="/profil/">Profili gör <i class="fk-i fk-i-arrow-r" aria-hidden="true"></i></a></div>
+              </form>
+            </section>
+            <div class="fk-stack">
+              <section class="ad-panel fk-reveal">
+                <div class="ad-panel-head"><div><h2>Fotoğraf</h2><p>PNG, JPG · en fazla 2 MB</p></div></div>
+                <div class="fk-stack" style="align-items:center;text-align:center">
+                  <span class="fk-avatar fk-avatar-lg ad-avatar-xl" data-ad-me-avatar aria-hidden="true">FK</span>
+                  <label class="fk-drop" style="width:100%"><i class="fk-i fk-i-upload fk-i-xl" aria-hidden="true"></i><strong>Fotoğraf yükle</strong><small>Sürükle ya da tıkla · 256×256 kırpılır</small><input type="file" accept="image/png,image/jpeg" data-ad-avatar aria-label="Profil fotoğrafı yükle"><span class="fk-drop-file" aria-live="polite"></span></label>
+                  <button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" data-ad-avatar-remove><i class="fk-i fk-i-trash" aria-hidden="true"></i>Fotoğrafı kaldır</button>
+                </div>
+              </section>
+              <section class="ad-panel fk-reveal">
+                <div class="ad-panel-head"><div><h2>Profil gücü</h2><p id="profil-yuzde">%0 tamam</p></div></div>
+                <div class="fk-progress" id="profil-bar" role="progressbar" aria-label="Profil tamamlanma oranı" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="--v:0"><i></i></div>
+                <p class="fk-muted" id="profil-eksik" style="margin:14px 0 0;font-size:14px"></p>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tercihler -->
+        <div class="fk-tabs-panel" id="tercihler" role="tabpanel" aria-labelledby="t-tercihler" hidden>
+          <div class="ad-even" data-ad-persist="tercih" data-ad-msg="Tercih kaydedildi">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Görünüm</h2><p>Bu cihazda geçerli</p></div></div>
+              <div class="fk-form">
+                <div class="fk-field"><span class="fk-label" id="l-tema">Tema</span><div class="fk-segment" role="radiogroup" aria-labelledby="l-tema"><label><input type="radio" name="tema" value="sistem" data-ad-skip><span>Sistem</span></label><label><input type="radio" name="tema" value="acik" data-ad-skip><span>Açık</span></label><label><input type="radio" name="tema" value="koyu" data-ad-skip><span>Koyu</span></label></div></div>
+                <div class="fk-field"><label class="fk-label" for="t-acilis">Açılış sayfası</label><select class="fk-select" id="t-acilis"><option value="/">Genel bakış</option><option value="/e-ticaret/">E-ticaret analizi</option><option value="/crm/">CRM analizi</option><option value="/siparisler/">Siparişler</option></select><span class="fk-hint">Giriş yaptıktan sonra açılacak ekran.</span></div>
+                <label class="fk-switch"><input type="checkbox" role="switch" id="t-ipucu" checked> Grafiklerde ipuçlarını göster</label>
+                <label class="fk-switch"><input type="checkbox" role="switch" id="t-kisayol" checked> Klavye kısayollarını etkinleştir</label>
+              </div>
+            </section>
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Bölge ve dil</h2><p>Tarih, saat ve para birimi</p></div></div>
+              <div class="fk-form">
+                <div class="fk-form-row">
+                  <div class="fk-field"><label class="fk-label" for="t-dil">Dil</label><select class="fk-select" id="t-dil"><option value="tr-TR">Türkçe</option><option value="en-GB">English</option><option value="de-DE">Deutsch</option></select></div>
+                  <div class="fk-field"><label class="fk-label" for="t-saat">Saat dilimi</label><select class="fk-select" id="t-saat"><option value="Europe/Istanbul">İstanbul (GMT+3)</option><option value="Europe/London">Londra</option><option value="Europe/Berlin">Berlin</option><option value="Asia/Dubai">Dubai</option><option value="America/New_York">New York</option><option value="UTC">UTC</option></select></div>
+                </div>
+                <div class="fk-form-row">
+                  <div class="fk-field"><label class="fk-label" for="t-tarih">Tarih biçimi</label><select class="fk-select" id="t-tarih"><option value="kisa">24.10.2026</option><option value="uzun">24 Ekim 2026</option><option value="iso">2026-10-24</option></select></div>
+                  <div class="fk-field"><label class="fk-label" for="t-para">Para birimi</label><select class="fk-select" id="t-para"><option value="TRY">Türk lirası (₺)</option><option value="USD">ABD doları ($)</option><option value="EUR">Euro (€)</option></select></div>
+                </div>
+                <div class="fk-field"><span class="fk-label" id="l-hafta">Haftanın ilk günü</span><div class="fk-segment" role="radiogroup" aria-labelledby="l-hafta"><label><input type="radio" name="hafta" value="pzt" checked><span>Pazartesi</span></label><label><input type="radio" name="hafta" value="paz"><span>Pazar</span></label></div></div>
+                <p class="ad-preview" id="t-onizleme" aria-live="polite"></p>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- Güvenlik -->
+        <div class="fk-tabs-panel" id="guvenlik" role="tabpanel" aria-labelledby="t-guvenlik" hidden>
+          <div class="ad-even">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Şifre değiştir</h2><p>En az 10 karakter</p></div></div>
+              <form class="fk-form" data-fk-validate data-fk-demo data-fk-success="Şifre güncellendi (demo)">
+                <div class="fk-field"><label class="fk-label" for="s-eski">Mevcut şifre</label><input class="fk-input" id="s-eski" type="password" required autocomplete="current-password"><span class="fk-error"></span></div>
+                <div class="fk-field"><label class="fk-label" for="s-yeni">Yeni şifre</label><input class="fk-input" id="s-yeni" type="password" required minlength="10" autocomplete="new-password" data-strength="s-meter" data-fk-msg="En az 10 karakter."><div class="ad-meter" id="s-meter" data-level="0"><i></i><i></i><i></i><i></i></div><span class="ad-meter-text">En az 8 karakter yaz</span><span class="fk-error"></span></div>
+                <div class="fk-field"><label class="fk-label" for="s-tekrar">Yeni şifre (tekrar)</label><input class="fk-input" id="s-tekrar" type="password" required autocomplete="new-password" data-match="s-yeni"><span class="fk-error"></span></div>
+                <div><button class="fk-btn fk-btn-primary" type="submit">Şifreyi güncelle</button></div>
+              </form>
+            </section>
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>İki adımlı doğrulama</h2><p>Önerilir</p></div></div>
+              <div class="fk-stack" data-ad-persist="guvenlik" data-ad-msg="Güvenlik ayarı kaydedildi">
+                <label class="fk-switch"><input type="checkbox" role="switch" id="g-totp" checked> Doğrulama uygulaması (TOTP)</label>
+                <label class="fk-switch"><input type="checkbox" role="switch" id="g-sms"> SMS ile kod</label>
+                <label class="fk-switch"><input type="checkbox" role="switch" id="g-yeni" checked> Yeni cihazda e-posta bildirimi</label>
+                <label class="fk-switch"><input type="checkbox" role="switch" id="g-zaman" checked> 30 dakika işlem yoksa oturumu kapat</label>
+                <a class="fk-btn fk-btn-ghost fk-btn-sm" href="/dogrulama/" style="align-self:flex-start"><i class="fk-i fk-i-shield-check" aria-hidden="true"></i>Doğrulama ekranını gör</a>
+              </div>
+            </section>
+          </div>
+          <div class="ad-sec ad-even">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Aktif oturumlar</h2><p id="oturum-sayi">3 cihaz</p></div><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" data-ad-revoke-all><i class="fk-i fk-i-logout" aria-hidden="true"></i>Diğerlerini kapat</button></div>
+              <div class="ad-session"><span class="ad-ico"><i class="fk-i fk-i-cpu" aria-hidden="true"></i></span><span><strong>Windows · Edge</strong><br><small class="fk-muted">Bursa · şu an</small></span><span class="fk-badge fk-badge-success">Bu cihaz</span></div><div class="ad-session"><span class="ad-ico"><i class="fk-i fk-i-phone" aria-hidden="true"></i></span><span><strong>iPhone · Safari</strong><br><small class="fk-muted">İstanbul · 2 saat önce</small></span><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" data-demo-revoke="iPhone · Safari">Oturumu kapat</button></div><div class="ad-session"><span class="ad-ico"><i class="fk-i fk-i-cpu" aria-hidden="true"></i></span><span><strong>macOS · Chrome</strong><br><small class="fk-muted">Ankara · 3 gün önce</small></span><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" data-demo-revoke="macOS · Chrome">Oturumu kapat</button></div>
+            </section>
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Yedek kodlar</h2><p>Telefonun yanında değilken</p></div><button class="fk-btn fk-btn-primary fk-btn-sm" type="button" data-ad-codes-gen><i class="fk-i fk-i-refresh" aria-hidden="true"></i>Kod oluştur</button></div>
+              <div class="fk-stack">
+                <p class="fk-muted" style="margin:0;font-size:14.5px">Her kod bir kez kullanılır. Kodlar yalnızca oluşturulduğu an gösterilir; güvenli bir yere kaydet.</p>
+                <ul class="ad-codes" id="yedek-kodlar" aria-label="Yedek kodlar" hidden></ul>
+                <div class="fk-cluster"><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" data-ad-codes-copy disabled><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" data-ad-codes-dl disabled><i class="fk-i fk-i-download" aria-hidden="true"></i>.txt indir</button></div>
+              </div>
+            </section>
+          </div>
+          <div class="ad-sec">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Giriş geçmişi</h2><p>Son 30 gün</p></div></div>
+              <div class="fk-table-wrap"><table class="fk-table"><thead><tr><th scope="col">Tarih</th><th scope="col">Cihaz</th><th scope="col">Konum</th><th scope="col">IP</th><th scope="col">Sonuç</th></tr></thead><tbody>
+                <tr><td>24.10.2026 09:12</td><td>Windows · Edge</td><td>Bursa</td><td class="fk-mono">88.241.•••.14</td><td><span class="fk-badge fk-badge-success">Başarılı</span></td></tr>
+                <tr><td>24.10.2026 07:40</td><td>iPhone · Safari</td><td>İstanbul</td><td class="fk-mono">176.88.•••.201</td><td><span class="fk-badge fk-badge-success">Başarılı</span></td></tr>
+                <tr><td>22.10.2026 23:05</td><td>Linux · Firefox</td><td>Frankfurt</td><td class="fk-mono">185.220.•••.9</td><td><span class="fk-badge fk-badge-danger">Engellendi · 2FA</span></td></tr>
+                <tr><td>21.10.2026 18:31</td><td>macOS · Chrome</td><td>Ankara</td><td class="fk-mono">78.180.•••.62</td><td><span class="fk-badge fk-badge-success">Başarılı</span></td></tr>
+                <tr><td>19.10.2026 11:02</td><td>Windows · Edge</td><td>Bursa</td><td class="fk-mono">88.241.•••.14</td><td><span class="fk-badge fk-badge-warning">Hatalı şifre</span></td></tr>
+              </tbody></table></div>
+            </section>
+          </div>
+        </div>
+
+        <!-- Bildirimler -->
+        <div class="fk-tabs-panel" id="bildirim" role="tabpanel" aria-labelledby="t-bildirim" hidden>
+          <div data-ad-persist="bildirim" data-ad-msg="Bildirim tercihi kaydedildi">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Bildirim tercihleri</h2><p>Olay · kanal</p></div><a class="fk-btn fk-btn-ghost fk-btn-sm" href="/bildirimler/"><i class="fk-i fk-i-inbox" aria-hidden="true"></i>Tüm bildirimler</a></div>
+              <div class="fk-table-wrap"><table class="fk-table ad-matrix"><thead><tr><th scope="col">Olay</th><th scope="col">E-posta</th><th scope="col">Panel</th><th scope="col">SMS</th></tr></thead><tbody>
+                <tr><th scope="row">Yeni sipariş</th><td><label class="fk-check"><input type="checkbox" id="b-siparis-m" checked aria-label="Yeni sipariş · e-posta"></label></td><td><label class="fk-check"><input type="checkbox" id="b-siparis-p" checked aria-label="Yeni sipariş · panel"></label></td><td><label class="fk-check"><input type="checkbox" id="b-siparis-s" aria-label="Yeni sipariş · SMS"></label></td></tr>
+                <tr><th scope="row">İade talebi</th><td><label class="fk-check"><input type="checkbox" id="b-iade-m" checked aria-label="İade talebi · e-posta"></label></td><td><label class="fk-check"><input type="checkbox" id="b-iade-p" checked aria-label="İade talebi · panel"></label></td><td><label class="fk-check"><input type="checkbox" id="b-iade-s" checked aria-label="İade talebi · SMS"></label></td></tr>
+                <tr><th scope="row">Stok uyarısı</th><td><label class="fk-check"><input type="checkbox" id="b-stok-m" checked aria-label="Stok uyarısı · e-posta"></label></td><td><label class="fk-check"><input type="checkbox" id="b-stok-p" checked aria-label="Stok uyarısı · panel"></label></td><td><label class="fk-check"><input type="checkbox" id="b-stok-s" aria-label="Stok uyarısı · SMS"></label></td></tr>
+                <tr><th scope="row">Teklif kabul / ret</th><td><label class="fk-check"><input type="checkbox" id="b-teklif-m" checked aria-label="Teklif · e-posta"></label></td><td><label class="fk-check"><input type="checkbox" id="b-teklif-p" checked aria-label="Teklif · panel"></label></td><td><label class="fk-check"><input type="checkbox" id="b-teklif-s" aria-label="Teklif · SMS"></label></td></tr>
+                <tr><th scope="row">Ürün yorumları</th><td><label class="fk-check"><input type="checkbox" id="b-yorum-m" aria-label="Ürün yorumları · e-posta"></label></td><td><label class="fk-check"><input type="checkbox" id="b-yorum-p" checked aria-label="Ürün yorumları · panel"></label></td><td><label class="fk-check"><input type="checkbox" id="b-yorum-s" aria-label="Ürün yorumları · SMS"></label></td></tr>
+                <tr><th scope="row">Güvenlik uyarıları</th><td><label class="fk-check"><input type="checkbox" id="b-guv-m" checked disabled aria-label="Güvenlik uyarıları · e-posta (her zaman açık)"></label></td><td><label class="fk-check"><input type="checkbox" id="b-guv-p" checked disabled aria-label="Güvenlik uyarıları · panel (her zaman açık)"></label></td><td><label class="fk-check"><input type="checkbox" id="b-guv-s" aria-label="Güvenlik uyarıları · SMS"></label></td></tr>
+              </tbody></table></div>
+            </section>
+            <div class="ad-sec ad-even">
+              <section class="ad-panel fk-reveal">
+                <div class="ad-panel-head"><div><h2>Sessiz saatler</h2><p>Panel ve SMS susar</p></div></div>
+                <div class="fk-stack">
+                  <label class="fk-switch"><input type="checkbox" role="switch" id="b-sessiz" checked> Sessiz saatleri kullan</label>
+                  <div class="ad-time"><label class="fk-label" for="b-bas" style="margin:0">Başlangıç</label><input class="fk-input fk-input-sm" type="time" id="b-bas" value="22:00"><label class="fk-label" for="b-bit" style="margin:0">Bitiş</label><input class="fk-input fk-input-sm" type="time" id="b-bit" value="08:00"></div>
+                  <p class="fk-muted" style="margin:0;font-size:14px">Güvenlik uyarıları sessiz saatlerde de gelir.</p>
+                </div>
+              </section>
+              <section class="ad-panel fk-reveal">
+                <div class="ad-panel-head"><div><h2>Özet e-postası</h2><p>Satış, sipariş, stok</p></div></div>
+                <div class="fk-stack">
+                  <div class="fk-segment" role="radiogroup" aria-label="Özet sıklığı"><label><input type="radio" name="ozet" value="kapali"><span>Kapalı</span></label><label><input type="radio" name="ozet" value="gunluk"><span>Günlük</span></label><label><input type="radio" name="ozet" value="haftalik" checked><span>Haftalık</span></label></div>
+                  <div class="fk-field"><label class="fk-label" for="b-ozet-saat">Gönderim saati</label><select class="fk-select" id="b-ozet-saat"><option>07:00</option><option selected>09:00</option><option>18:00</option></select></div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faturalandırma -->
+        <div class="fk-tabs-panel" id="fatura" role="tabpanel" aria-labelledby="t-fatura" hidden>
+          <div class="ad-split">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Mevcut plan</h2><p id="plan-yenileme">Sonraki ödeme · 24 Kasım 2026</p></div><span class="fk-badge fk-badge-success" id="plan-durum">Aktif</span></div>
+              <div class="fk-stack">
+                <div><span class="fk-eyebrow" id="plan-ad">Pro</span><p class="ad-plan-price"><span id="plan-fiyat">₺499</span><small id="plan-donem">/ ay · KDV dahil</small></p></div>
+                <ul class="ad-usage">
+                  <li><div class="ad-row-between"><span>Sipariş</span><span>1.284 / 5.000</span></div><div class="fk-progress" role="progressbar" aria-label="Sipariş kotası" aria-valuenow="26" aria-valuemin="0" aria-valuemax="100" style="--v:.26"><i></i></div></li>
+                  <li><div class="ad-row-between"><span>Ekip koltuğu</span><span>5 / 10</span></div><div class="fk-progress" role="progressbar" aria-label="Ekip koltuğu" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="--v:.5"><i></i></div></li>
+                  <li><div class="ad-row-between"><span>API isteği</span><span>18.400 / 50.000</span></div><div class="fk-progress" role="progressbar" aria-label="API isteği kotası" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100" style="--v:.37"><i></i></div></li>
+                  <li><div class="ad-row-between"><span>Depolama</span><span>8,6 / 10 GB</span></div><div class="fk-progress" role="progressbar" aria-label="Depolama" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="--v:.86"><i></i></div></li>
+                </ul>
+                <div class="fk-cluster"><button class="fk-btn fk-btn-primary" type="button" data-fk-open="#m-plan"><i class="fk-i fk-i-zap" aria-hidden="true"></i>Planı değiştir</button><button class="fk-btn fk-btn-ghost" type="button" data-ad-cancel-sub>Aboneliği iptal et</button></div>
+              </div>
+            </section>
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Ödeme yöntemi</h2><p>Varsayılan kart</p></div></div>
+              <div class="fk-stack">
+                <div class="ad-card-pay" aria-label="Visa, sonu 4242, son kullanma 09/28"><div class="ad-row-between"><span>fkdev Pro</span><span>VISA</span></div><span class="num">•••• •••• •••• 4242</span><div class="ad-row-between"><span>Furkan Kırcı</span><span>09/28</span></div></div>
+                <button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" style="align-self:flex-start" data-fk-toast="Kart bilgileri ödeme sağlayıcısının güvenli sayfasında güncellenir (demo)." data-fk-type="info"><i class="fk-i fk-i-card" aria-hidden="true"></i>Kartı güncelle</button>
+                <div class="callout"><i class="fk-i fk-i-lock" aria-hidden="true"></i><div><p><strong>Kart bilgisi bu sunucuda tutulmaz</strong>Gerçek kurulumda kart, iyzico ya da PayTR gibi sağlayıcının sayfasında alınır; panel yalnızca token saklar.</p></div></div>
+              </div>
+            </section>
+          </div>
+          <div class="ad-sec ad-even">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Fatura bilgileri</h2><p>e-Arşiv / e-Fatura</p></div></div>
+              <form class="fk-form" id="f-fatura" data-fk-validate data-ad-save="fatura" data-ad-msg="Fatura bilgileri kaydedildi">
+                <div class="fk-segment" role="radiogroup" aria-label="Fatura tipi"><label><input type="radio" name="ftip" value="kurumsal" checked><span>Kurumsal</span></label><label><input type="radio" name="ftip" value="bireysel"><span>Bireysel</span></label></div>
+                <div class="fk-field" data-ad-ftip="kurumsal"><label class="fk-label" for="f-unvan">Firma unvanı</label><input type="text" class="fk-input" id="f-unvan" value="fkdev Yazılım" required autocomplete="organization"><span class="fk-error"></span></div>
+                <div class="fk-form-row">
+                  <div class="fk-field" data-ad-ftip="kurumsal"><label class="fk-label" for="f-vd">Vergi dairesi</label><input type="text" class="fk-input" id="f-vd" value="Nilüfer" required><span class="fk-error"></span></div>
+                  <div class="fk-field"><label class="fk-label" for="f-no" id="f-no-l">Vergi no</label><input type="text" class="fk-input" id="f-no" inputmode="numeric" value="" required pattern="\d{10}" data-fk-msg="Vergi numarası 10 hane olmalı."><span class="fk-error"></span></div>
+                </div>
+                <div class="fk-field"><label class="fk-label" for="f-adres">Adres</label><textarea class="fk-textarea" id="f-adres" rows="2" required autocomplete="street-address">Nilüfer, Bursa</textarea><span class="fk-error"></span></div>
+                <div class="fk-form-row">
+                  <div class="fk-field"><label class="fk-label" for="f-il">İl</label><input type="text" class="fk-input" id="f-il" value="Bursa" required autocomplete="address-level1"><span class="fk-error"></span></div>
+                  <div class="fk-field"><label class="fk-label" for="f-mail">Fatura e-postası</label><input type="email" class="fk-input" id="f-mail" value="fatura@fkdev.sbs" required autocomplete="email"><span class="fk-error"></span></div>
+                </div>
+                <div><button class="fk-btn fk-btn-primary" type="submit">Kaydet</button></div>
+              </form>
+            </section>
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Fatura geçmişi</h2><p>Son 6 ay</p></div></div>
+              <div class="fk-table-wrap"><table class="fk-table"><thead><tr><th scope="col">Fatura</th><th scope="col">Tarih</th><th scope="col" class="fk-text-right">Tutar</th><th scope="col"><span class="fk-sr">İndir</span></th></tr></thead><tbody>
+                <tr><td class="fk-mono">FK-2026-10</td><td>24.10.2026</td><td class="fk-text-right">₺499,00</td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" aria-label="FK-2026-10 faturasını indir" data-ad-invoice="FK-2026-10|24.10.2026|499,00"><i class="fk-i fk-i-download" aria-hidden="true"></i></button></td></tr>
+                <tr><td class="fk-mono">FK-2026-09</td><td>24.09.2026</td><td class="fk-text-right">₺499,00</td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" aria-label="FK-2026-09 faturasını indir" data-ad-invoice="FK-2026-09|24.09.2026|499,00"><i class="fk-i fk-i-download" aria-hidden="true"></i></button></td></tr>
+                <tr><td class="fk-mono">FK-2026-08</td><td>24.08.2026</td><td class="fk-text-right">₺499,00</td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" aria-label="FK-2026-08 faturasını indir" data-ad-invoice="FK-2026-08|24.08.2026|499,00"><i class="fk-i fk-i-download" aria-hidden="true"></i></button></td></tr>
+                <tr><td class="fk-mono">FK-2026-07</td><td>24.07.2026</td><td class="fk-text-right">₺399,00</td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" aria-label="FK-2026-07 faturasını indir" data-ad-invoice="FK-2026-07|24.07.2026|399,00"><i class="fk-i fk-i-download" aria-hidden="true"></i></button></td></tr>
+                <tr><td class="fk-mono">FK-2026-06</td><td>24.06.2026</td><td class="fk-text-right">₺399,00</td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" aria-label="FK-2026-06 faturasını indir" data-ad-invoice="FK-2026-06|24.06.2026|399,00"><i class="fk-i fk-i-download" aria-hidden="true"></i></button></td></tr>
+              </tbody></table></div>
+            </section>
+          </div>
+        </div>
+
+        <!-- API -->
+        <div class="fk-tabs-panel" id="api" role="tabpanel" aria-labelledby="t-api" hidden>
+          <section class="ad-panel fk-reveal">
+            <div class="ad-panel-head"><div><h2>API anahtarları</h2><p>Sunucudan sunucuya kullan</p></div><button class="fk-btn fk-btn-primary fk-btn-sm" type="button" data-fk-open="#m-api"><i class="fk-i fk-i-key" aria-hidden="true"></i>Yeni anahtar</button></div>
+            <div class="callout callout-warn"><i class="fk-i fk-i-warn" aria-hidden="true"></i><div><p><strong>Anahtarı tarayıcıya koyma</strong>API anahtarları yalnızca sunucu tarafında, ortam değişkeninde saklanır. Anahtar oluşturulduğu an bir kez gösterilir; sonra yalnızca son 4 karakteri görünür.</p></div></div>
+            <div class="fk-table-wrap"><table class="fk-table"><thead><tr><th scope="col">Ad</th><th scope="col">Anahtar</th><th scope="col">İzinler</th><th scope="col">Oluşturma</th><th scope="col">Son kullanım</th><th scope="col"><span class="fk-sr">İşlem</span></th></tr></thead><tbody id="api-anahtarlar">
+              <tr><td><strong>Canlı mağaza</strong></td><td class="fk-mono">fk_live_••••7Q2c</td><td><span class="fk-badge">siparis:okuma</span> <span class="fk-badge">siparis:yazma</span></td><td>12.03.2026</td><td>5 dakika önce</td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" data-ad-revoke-key="Canlı mağaza" data-fk-tip="İptal et" aria-label="Canlı mağaza anahtarını iptal et"><i class="fk-i fk-i-trash" aria-hidden="true"></i></button></td></tr>
+              <tr><td><strong>Raporlama</strong></td><td class="fk-mono">fk_live_••••b81X</td><td><span class="fk-badge">siparis:okuma</span> <span class="fk-badge">musteri:okuma</span></td><td>02.08.2026</td><td>Dün</td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" data-ad-revoke-key="Raporlama" data-fk-tip="İptal et" aria-label="Raporlama anahtarını iptal et"><i class="fk-i fk-i-trash" aria-hidden="true"></i></button></td></tr>
+            </tbody></table></div>
+            <p class="fk-muted" style="margin:16px 0 0;font-size:14px">Hız sınırı: dakikada 600 istek. Uç noktalar ve örnekler için <a class="fk-link" href="/dokumantasyon/datatables/#sunucu">DataTables ve PHP</a> belgesine bak.</p>
+          </section>
+        </div>
+
+        <!-- Entegrasyonlar -->
+        <div class="fk-tabs-panel" id="entegrasyon" role="tabpanel" aria-labelledby="t-entegrasyon" hidden>
+          <div class="ad-three">
+            <section class="ad-panel ad-integ fk-reveal" data-ad-integ="slack" data-ad-on="1"><div class="ad-row-between"><span class="ad-ico"><i class="fk-i fk-i-message" aria-hidden="true"></i></span><span class="fk-badge"></span></div><h3 class="fk-h4" style="margin:0">Slack</h3><p>Yeni sipariş ve stok uyarılarını bir kanala gönder.</p><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button"></button></section>
+            <section class="ad-panel ad-integ fk-reveal" data-ad-integ="iyzico" data-ad-on="1"><div class="ad-row-between"><span class="ad-ico"><i class="fk-i fk-i-card" aria-hidden="true"></i></span><span class="fk-badge"></span></div><h3 class="fk-h4" style="margin:0">iyzico</h3><p>Kartla ödeme ve iade; ödeme durumunu siparişe işler.</p><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button"></button></section>
+            <section class="ad-panel ad-integ fk-reveal" data-ad-integ="paytr"><div class="ad-row-between"><span class="ad-ico"><i class="fk-i fk-i-wallet" aria-hidden="true"></i></span><span class="fk-badge"></span></div><h3 class="fk-h4" style="margin:0">PayTR</h3><p>Alternatif ödeme sağlayıcısı; taksit ve havale/EFT.</p><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button"></button></section>
+            <section class="ad-panel ad-integ fk-reveal" data-ad-integ="analytics" data-ad-on="1"><div class="ad-row-between"><span class="ad-ico"><i class="fk-i fk-i-chart" aria-hidden="true"></i></span><span class="fk-badge"></span></div><h3 class="fk-h4" style="margin:0">Google Analytics</h3><p>Ziyaret ve dönüşüm verisini e-ticaret raporuna çek.</p><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button"></button></section>
+            <section class="ad-panel ad-integ fk-reveal" data-ad-integ="parasut"><div class="ad-row-between"><span class="ad-ico"><i class="fk-i fk-i-file" aria-hidden="true"></i></span><span class="fk-badge"></span></div><h3 class="fk-h4" style="margin:0">Paraşüt</h3><p>Ödenen siparişler için e-Arşiv faturasını otomatik kes.</p><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button"></button></section>
+            <section class="ad-panel ad-integ fk-reveal" data-ad-integ="kargo"><div class="ad-row-between"><span class="ad-ico"><i class="fk-i fk-i-truck" aria-hidden="true"></i></span><span class="fk-badge"></span></div><h3 class="fk-h4" style="margin:0">Kargo</h3><p>Yurtiçi, Aras ve MNG için gönderi kodu ve takip.</p><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button"></button></section>
+          </div>
+          <div class="ad-sec">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Webhook'lar</h2><p>Olayları kendi sunucuna gönder</p></div></div>
+              <ul class="ad-rows" id="webhooklar">
+                <li><span class="ad-ico"><i class="fk-i fk-i-link" aria-hidden="true"></i></span><span><strong class="fk-mono">https://api.ornek.com/fkdev/siparis</strong><small>siparis.olustu, siparis.iade · whsec_••••9fA2</small></span><span class="fk-cluster" style="--fk-gap:4px"><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" data-ad-hook-test>Test et</button><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" data-ad-hook-del aria-label="Webhook'u sil"><i class="fk-i fk-i-trash" aria-hidden="true"></i></button></span></li>
+              </ul>
+              <form class="fk-form ad-sec" id="f-webhook" data-fk-validate>
+                <div class="fk-field"><label class="fk-label" for="w-url">Uç nokta adresi</label><input type="url" class="fk-input" id="w-url" placeholder="https://api.siteniz.com/webhook" required pattern="https://.+" data-fk-msg="https:// ile başlayan geçerli bir adres yaz."><span class="fk-error"></span></div>
+                <div class="fk-cluster" role="group" aria-label="Olaylar"><label class="fk-check"><input type="checkbox" name="olay" value="siparis.olustu" checked> siparis.olustu</label><label class="fk-check"><input type="checkbox" name="olay" value="siparis.iade"> siparis.iade</label><label class="fk-check"><input type="checkbox" name="olay" value="stok.azaldi"> stok.azaldi</label><label class="fk-check"><input type="checkbox" name="olay" value="musteri.olustu"> musteri.olustu</label></div>
+                <div><button class="fk-btn fk-btn-primary fk-btn-sm" type="submit"><i class="fk-i fk-i-plus" aria-hidden="true"></i>Webhook ekle</button></div>
+              </form>
+            </section>
+          </div>
+        </div>
+
+        <!-- Ekip -->
+        <div class="fk-tabs-panel" id="ekip" role="tabpanel" aria-labelledby="t-ekip" hidden>
+          <section class="ad-panel fk-reveal">
+            <div class="ad-panel-head"><div><h2>Ekip</h2><p id="ekip-sayi">5 kişi · 10 koltuk</p></div><button class="fk-btn fk-btn-primary fk-btn-sm" type="button" data-fk-open="#m-davet"><i class="fk-i fk-i-user-plus" aria-hidden="true"></i>Davet et</button></div>
+            <div class="fk-table-wrap"><table class="fk-table"><thead><tr><th scope="col">Kişi</th><th scope="col">E-posta</th><th scope="col">Rol</th><th scope="col"><span class="fk-sr">İşlem</span></th></tr></thead><tbody id="ekip-tablo"><tr><td><span class="fk-cluster" style="--fk-gap:10px"><span class="fk-avatar fk-avatar-sm" data-ad-me-avatar aria-hidden="true">FK</span><strong data-ad-me="p-ad">Furkan Kırcı</strong></span></td><td data-ad-me="p-mail">merhaba@fkdev.sbs</td><td><select class="fk-select fk-input-sm" aria-label="Senin rolün" disabled><option selected>admin</option><option>editor</option><option>viewer</option></select></td><td><span class="fk-badge fk-badge-solid">Sen</span></td></tr><tr><td><span class="fk-cluster" style="--fk-gap:10px"><span class="fk-avatar fk-avatar-sm" aria-hidden="true">SA</span><strong>Selin Aydın</strong></span></td><td>selin@ornek.com</td><td><select class="fk-select fk-input-sm" aria-label="Selin Aydın rolü" data-ad-role="Selin Aydın"><option>admin</option><option selected>editor</option><option>viewer</option></select></td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" data-fk-tip="Ekipten çıkar" aria-label="Selin Aydın kişisini ekipten çıkar" data-ad-remove="Selin Aydın"><i class="fk-i fk-i-trash" aria-hidden="true"></i></button></td></tr><tr><td><span class="fk-cluster" style="--fk-gap:10px"><span class="fk-avatar fk-avatar-sm" aria-hidden="true">CÖ</span><strong>Can Öztürk</strong></span></td><td>can@ornek.com</td><td><select class="fk-select fk-input-sm" aria-label="Can Öztürk rolü" data-ad-role="Can Öztürk"><option>admin</option><option selected>editor</option><option>viewer</option></select></td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" data-fk-tip="Ekipten çıkar" aria-label="Can Öztürk kişisini ekipten çıkar" data-ad-remove="Can Öztürk"><i class="fk-i fk-i-trash" aria-hidden="true"></i></button></td></tr><tr><td><span class="fk-cluster" style="--fk-gap:10px"><span class="fk-avatar fk-avatar-sm" aria-hidden="true">EŞ</span><strong>Elif Şahin</strong></span></td><td>elif@ornek.com</td><td><select class="fk-select fk-input-sm" aria-label="Elif Şahin rolü" data-ad-role="Elif Şahin"><option>admin</option><option>editor</option><option selected>viewer</option></select></td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" data-fk-tip="Ekipten çıkar" aria-label="Elif Şahin kişisini ekipten çıkar" data-ad-remove="Elif Şahin"><i class="fk-i fk-i-trash" aria-hidden="true"></i></button></td></tr><tr><td><span class="fk-cluster" style="--fk-gap:10px"><span class="fk-avatar fk-avatar-sm" aria-hidden="true">BÇ</span><strong>Burak Çelik</strong></span></td><td>burak@ornek.com</td><td><select class="fk-select fk-input-sm" aria-label="Burak Çelik rolü" data-ad-role="Burak Çelik"><option>admin</option><option>editor</option><option selected>viewer</option></select></td><td><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" data-fk-tip="Ekipten çıkar" aria-label="Burak Çelik kişisini ekipten çıkar" data-ad-remove="Burak Çelik"><i class="fk-i fk-i-trash" aria-hidden="true"></i></button></td></tr></tbody></table></div>
+          </section>
+          <div class="ad-sec ad-even">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Bekleyen davetler</h2><p id="davet-sayi">1 davet</p></div></div>
+              <ul class="ad-rows" id="davetler">
+                <li data-mail="deniz@ornek.com"><span class="ad-ico"><i class="fk-i fk-i-mail" aria-hidden="true"></i></span><span><strong>deniz@ornek.com</strong><small>editor · 2 gün önce gönderildi</small></span><span class="fk-cluster" style="--fk-gap:4px"><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" data-ad-invite-resend>Yeniden gönder</button><button class="fk-btn fk-btn-icon fk-btn-sm" type="button" data-ad-invite-cancel aria-label="deniz@ornek.com davetini iptal et"><i class="fk-i fk-i-x" aria-hidden="true"></i></button></span></li>
+              </ul>
+              <p class="fk-muted" id="davet-bos" style="margin:0;font-size:14.5px" hidden>Bekleyen davet yok.</p>
+            </section>
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Roller</h2><p>Kim neyi yapabilir</p></div></div>
+              <dl class="fk-dl">
+                <dt>admin</dt><dd>Her şey: plan, faturalar, ekip, API anahtarları ve hesap silme.</dd>
+                <dt>editor</dt><dd>Sipariş, ürün ve müşteri ekler, düzenler; ayarlara ve faturaya erişemez.</dd>
+                <dt>viewer</dt><dd>Raporları ve listeleri görür; hiçbir şeyi değiştiremez.</dd>
+              </dl>
+            </section>
+          </div>
+        </div>
+
+        <!-- Hesap -->
+        <div class="fk-tabs-panel" id="hesap" role="tabpanel" aria-labelledby="t-hesap" hidden>
+          <div class="ad-even">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Verilerini dışa aktar</h2><p>KVKK · taşınabilirlik</p></div></div>
+              <div class="fk-stack">
+                <p class="fk-muted" style="margin:0;font-size:14.5px">Profilin, tercihlerin, bildirim ayarların ve fatura bilgilerin tek bir JSON dosyasında iner.</p>
+                <button class="fk-btn fk-btn-primary fk-btn-sm" type="button" style="align-self:flex-start" data-ad-export><i class="fk-i fk-i-download" aria-hidden="true"></i>JSON indir</button>
+              </div>
+            </section>
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Yerel demo verisi</h2><p>Bu tarayıcıda saklanır</p></div></div>
+              <div class="fk-stack">
+                <p class="fk-muted" style="margin:0;font-size:14.5px">Demo, kaydettiğin her şeyi bu tarayıcının <code>localStorage</code> alanında tutar. Sıfırlarsan başlangıç verisine dönersin.</p>
+                <button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" style="align-self:flex-start" data-ad-reset><i class="fk-i fk-i-refresh" aria-hidden="true"></i>Demo verisini sıfırla</button>
+              </div>
+            </section>
+          </div>
+          <div class="ad-sec">
+            <section class="ad-panel fk-reveal">
+              <div class="ad-panel-head"><div><h2>Hesabı dondur</h2><p>Geçici</p></div><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" data-ad-freeze><i class="fk-i fk-i-clock" aria-hidden="true"></i>Dondur</button></div>
+              <p class="fk-muted" style="margin:0">Mağaza ziyaretçilere kapanır, veriler korunur. Tekrar giriş yaptığında hesabın açılır.</p>
+            </section>
+          </div>
+          <div class="ad-sec">
+            <section class="ad-panel ad-danger"><div class="ad-panel-head"><div><h2>Tehlikeli bölge</h2><p>Geri alınamaz</p></div><button class="fk-btn fk-btn-danger fk-btn-sm" type="button" id="hesap-sil" data-fk-open="#m-sil"><i class="fk-i fk-i-trash" aria-hidden="true"></i>Hesabı sil</button></div><p class="fk-muted" style="margin:0">Hesabını silersen tüm siparişler, müşteriler ve raporlar 30 gün sonra kalıcı olarak silinir. Bu süre içinde giriş yaparak vazgeçebilirsin.</p></section>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modallar -->
+      <dialog class="fk-modal" id="m-plan" aria-labelledby="m-plan-t">
+        <form id="f-plan">
+          <div class="fk-modal-head"><h3 class="fk-h3" id="m-plan-t">Planı değiştir</h3><button type="button" class="fk-btn fk-btn-icon" data-fk-close aria-label="Kapat"><i class="fk-i fk-i-x" aria-hidden="true"></i></button></div>
+          <div class="fk-modal-body fk-stack">
+            <div class="fk-segment" role="radiogroup" aria-label="Fatura dönemi"><label><input type="radio" name="donem" value="ay" checked><span>Aylık</span></label><label><input type="radio" name="donem" value="yil"><span>Yıllık · 2 ay hediye</span></label></div>
+            <div class="ad-plans" role="radiogroup" aria-label="Plan">
+              <label><input type="radio" name="plan" value="Başlangıç" data-ay="0" data-yil="0"><span><strong>Başlangıç</strong><small>500 sipariş · 1 kişi</small></span><b data-fiyat></b></label>
+              <label><input type="radio" name="plan" value="Pro" data-ay="499" data-yil="4990" checked><span><strong>Pro</strong><small>5.000 sipariş · 10 kişi · API</small></span><b data-fiyat></b></label>
+              <label><input type="radio" name="plan" value="Ekip" data-ay="1290" data-yil="12900"><span><strong>Ekip</strong><small>Sınırsız sipariş · 50 kişi · öncelikli destek</small></span><b data-fiyat></b></label>
+            </div>
+          </div>
+          <div class="fk-modal-foot"><button type="button" class="fk-btn fk-btn-ghost" data-fk-close>Vazgeç</button><button type="submit" class="fk-btn fk-btn-primary">Planı güncelle</button></div>
+        </form>
+      </dialog>
+
+      <dialog class="fk-modal" id="m-api" aria-labelledby="m-api-t">
+        <form id="f-api" class="fk-form" data-fk-validate>
+          <div class="fk-modal-head"><h3 class="fk-h3" id="m-api-t">Yeni API anahtarı</h3><button type="button" class="fk-btn fk-btn-icon" data-fk-close aria-label="Kapat"><i class="fk-i fk-i-x" aria-hidden="true"></i></button></div>
+          <div class="fk-modal-body fk-stack" data-ad-step="1">
+            <div class="fk-field"><label class="fk-label" for="a-ad">Anahtar adı</label><input type="text" class="fk-input" id="a-ad" required maxlength="40" placeholder="Örn. Muhasebe entegrasyonu"><span class="fk-error"></span></div>
+            <div class="fk-field"><span class="fk-label">İzinler</span><div class="fk-stack" style="--fk-gap:8px"><label class="fk-check"><input type="checkbox" name="kapsam" value="siparis:okuma" checked> siparis:okuma</label><label class="fk-check"><input type="checkbox" name="kapsam" value="siparis:yazma"> siparis:yazma</label><label class="fk-check"><input type="checkbox" name="kapsam" value="musteri:okuma"> musteri:okuma</label><label class="fk-check"><input type="checkbox" name="kapsam" value="urun:yazma"> urun:yazma</label></div></div>
+            <div class="fk-field"><label class="fk-label" for="a-sure">Geçerlilik</label><select class="fk-select" id="a-sure"><option value="30">30 gün</option><option value="90" selected>90 gün</option><option value="365">1 yıl</option><option value="0">Süresiz</option></select></div>
+          </div>
+          <div class="fk-modal-body ad-key-once" data-ad-step="2" hidden>
+            <div class="callout callout-warn" style="margin:0"><i class="fk-i fk-i-warn" aria-hidden="true"></i><div><p><strong>Bu anahtarı şimdi kopyala</strong>Pencereyi kapattıktan sonra bir daha gösterilmez.</p></div></div>
+            <div class="fk-copyfield"><input type="text" id="a-deger" readonly aria-label="Yeni API anahtarı"><button class="fk-btn fk-btn-ghost fk-btn-sm" type="button" data-fk-copy="#a-deger" data-fk-msg="Anahtar kopyalandı"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div>
+          </div>
+          <div class="fk-modal-foot"><button type="button" class="fk-btn fk-btn-ghost" data-fk-close data-ad-step="1">Vazgeç</button><button type="submit" class="fk-btn fk-btn-primary" data-ad-step="1">Oluştur</button><button type="button" class="fk-btn fk-btn-primary" data-fk-close data-ad-step="2" hidden>Kopyaladım, kapat</button></div>
+        </form>
+      </dialog>
+
+      <dialog class="fk-modal" id="m-davet" aria-labelledby="m-davet-t">
+        <form id="f-davet" class="fk-form" data-fk-validate>
+          <div class="fk-modal-head"><h3 class="fk-h3" id="m-davet-t">Ekibe davet et</h3><button type="button" class="fk-btn fk-btn-icon" data-fk-close aria-label="Kapat"><i class="fk-i fk-i-x" aria-hidden="true"></i></button></div>
+          <div class="fk-modal-body fk-stack">
+            <div class="fk-field"><label class="fk-label" for="d-mail">E-posta</label><input type="email" class="fk-input" id="d-mail" required placeholder="ad@sirket.com" autocomplete="off"><span class="fk-error"></span></div>
+            <div class="fk-field"><label class="fk-label" for="d-rol">Rol</label><select class="fk-select" id="d-rol"><option value="admin">admin</option><option value="editor" selected>editor</option><option value="viewer">viewer</option></select></div>
+            <div class="fk-field" data-fk-counter><label class="fk-label" for="d-not">Not (isteğe bağlı)</label><textarea class="fk-textarea" id="d-not" rows="2" maxlength="200"></textarea><span class="fk-counter"></span></div>
+          </div>
+          <div class="fk-modal-foot"><button type="button" class="fk-btn fk-btn-ghost" data-fk-close>Vazgeç</button><button type="submit" class="fk-btn fk-btn-primary"><i class="fk-i fk-i-send" aria-hidden="true"></i>Davet gönder</button></div>
+        </form>
+      </dialog>
+
+      <dialog class="fk-modal" id="m-sil" aria-labelledby="m-sil-t">
+        <div class="fk-modal-head"><h3 class="fk-h3" id="m-sil-t">Hesap silinsin mi?</h3><button type="button" class="fk-btn fk-btn-icon" data-fk-close aria-label="Kapat"><i class="fk-i fk-i-x" aria-hidden="true"></i></button></div>
+        <div class="fk-modal-body fk-stack">
+          <p style="margin:0">Tüm siparişler, müşteriler, ürünler ve raporlar 30 gün sonra kalıcı olarak silinir. Onaylamak için e-posta adresini yaz: <strong data-ad-me="p-mail">merhaba@fkdev.sbs</strong></p>
+          <div class="fk-field"><label class="fk-label" for="sil-onay">E-posta adresin</label><input type="email" class="fk-input" id="sil-onay" autocomplete="off"></div>
+        </div>
+        <div class="fk-modal-foot"><button type="button" class="fk-btn fk-btn-ghost" data-fk-close>Vazgeç</button><button type="button" class="fk-btn fk-btn-danger" id="sil-ok" disabled>Hesabı kalıcı olarak sil</button></div>
+      </dialog>
+
+  </main>
+  <footer class="fk-fc-wrap">
+    <div class="fk-fc">
+      <a class="fk-fc-brand" href="/">fkdev <i>Admin</i></a>
+      <p class="fk-fc-tag">Admin dashboard · fkdev UI v2.4.1 · MIT</p>
+      <ul class="fk-fc-social"><li><a href="https://linkedin.com/in/furkankirci" target="_blank" rel="noopener me" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4V9.5Z"/></svg></a></li><li><a href="https://github.com/furkankirci" target="_blank" rel="noopener me" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg></a></li><li><a href="https://x.com/furkankirci" target="_blank" rel="noopener me" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78L17.75 3Zm-1.08 16.2h1.7L7.4 4.73H5.57l11.1 14.47Z"/></svg></a></li><li><a href="https://medium.com/@furkankirci" target="_blank" rel="noopener me" aria-label="Medium"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 12a6.75 6.75 0 1 1-13.5 0 6.75 6.75 0 0 1 13.5 0Zm7.4 0c0 3.5-1.5 6.36-3.37 6.36S14.16 15.5 14.16 12s1.51-6.36 3.37-6.36S20.9 8.5 20.9 12ZM24 12c0 3.13-.53 5.68-1.18 5.68s-1.18-2.55-1.18-5.68.53-5.68 1.18-5.68S24 8.87 24 12Z"/></svg></a></li></ul>
+      <nav class="fk-fc-nav" aria-label="Alt menü"><ul><li><a href="/">Panel</a></li><li><a href="/e-ticaret/">E-ticaret</a></li><li><a href="/crm/">CRM</a></li><li><a href="/siparisler/">Siparişler</a></li><li><a href="/musteriler/">Müşteriler</a></li><li><a href="/urunler/">Ürünler</a></li><li><a href="/profil/">Profil</a></li><li><a href="/bildirimler/">Bildirimler</a></li><li><a href="/ayarlar/">Ayarlar</a></li><li><a href="/dokumantasyon/">Belgeler</a></li><li><a href="/dokumantasyon/guvenlik/">Güvenlik</a></li><li><a href="/lisans/">Lisans</a></li><li><a href="https://github.com/fkircidevs/fkdev-admin">GitHub ↗</a></li><li><a href="https://ui.fkdev.sbs">ui.fkdev.sbs ↗</a></li></ul></nav>
+      <ul class="fk-fc-contact">
+        <li><button type="button" data-fk-copy="fkdevs" data-fk-msg="WhatsApp kullanıcı adı kopyalandı: fkdevs"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></span>fkdevs</button></li>
+        <li><a href="mailto:merhaba@fkdev.sbs"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>merhaba@fkdev.sbs</a></li>
+        <li><a href="mailto:ik@fkdev.sbs"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>ik@fkdev.sbs</a></li>
+        <li><a href="https://yukle.fkdev.sbs/" target="_blank" rel="noopener"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M6 9l6-6 6 6M4 20h16"/></svg></span>yukle.fkdev.sbs</a></li>
+      </ul>
+      <nav class="fk-fc-eco" aria-label="fkdev ekosistemi"><a href="https://www.fkdev.sbs/">fkdev.sbs</a><a href="https://ui.fkdev.sbs/">ui.fkdev.sbs</a><a href="https://admin.fkdev.sbs/" aria-current="true">admin.fkdev.sbs</a></nav>
+      <div class="fk-fc-bottom">
+        <p>© 2026 Furkan Kırcı · MIT</p>
+        <p class="fk-fc-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Bursa · Nerede isterseniz</p>
+        <button class="fk-fc-top" type="button" data-fk-top>Başa dön <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ui.fkdev.sbs/v2.4.1/fkdev-ui.min.js" integrity="sha384-M00Zh34vyulzgDN4UvQcDJteSAYjql+zh1KP3B8lMfPikmAoJLDzbKnjWiFHPsvT" crossorigin="anonymous" defer data-fk-yedek="fkdev-ui.min.js"></script>
+  <script src="/assets/admin.js?v=1.1.0" defer></script>
+</body>
+</html>

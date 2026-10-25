@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /ornekler/
+
+Sitemap: https://admin.fkdev.sbs/sitemap.xml

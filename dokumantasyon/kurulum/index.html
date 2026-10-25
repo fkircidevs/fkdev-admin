@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>(function(d){var r=d.documentElement;r.classList.add('js');try{var t=localStorage.getItem('fk-theme');if(t==='dark'||t==='light')r.setAttribute('data-theme',t)}catch(e){}})(document)</script>
+  <title>Kurulum ve Yayınlama — fkdev Admin</title>
+  <meta name="description" content="fkdev Admin kurulumu: GitHub’dan indirme, Apache ve Nginx ile kendi sunucunda yayınlama, CDN bağlantısı ve PHP ile gerçek veriye bağlama.">
+  <meta name="author" content="Furkan Kırcı">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#050505" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://admin.fkdev.sbs/dokumantasyon/kurulum/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="fkdev Admin">
+  <meta property="og:url" content="https://admin.fkdev.sbs/dokumantasyon/kurulum/">
+  <meta property="og:title" content="Kurulum ve Yayınlama — fkdev Admin">
+  <meta property="og:description" content="fkdev Admin kurulumu: GitHub’dan indirme, Apache ve Nginx ile kendi sunucunda yayınlama, CDN bağlantısı ve PHP ile gerçek veriye bağlama.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://ui.fkdev.sbs" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&amp;family=Geist:wght@300..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+  <script src="/assets/fkdev-yedek.js?v=1.0.0"></script>
+  <link rel="stylesheet" href="https://ui.fkdev.sbs/v2.4.1/fkdev-ui.min.css" integrity="sha384-ywbvrnvLBhspdz061sb4+HVmL4bAnbhyuwKyDq0qCBVdEeLw2Le+aT+M0XhiumnM" crossorigin="anonymous" data-fk-yedek="fkdev-ui.min.css">
+  <link rel="stylesheet" href="https://ui.fkdev.sbs/v2.4.1/fkdev-icons.css" integrity="sha384-7yUKhYWWrNB988JPR7B5hWqmWKk50ryeZ/b688YUSNn02PjgfTkhgNDnoRUX0w4V" crossorigin="anonymous" data-fk-yedek="fkdev-icons.css">
+  <link rel="stylesheet" href="/assets/admin.css?v=1.1.0">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://admin.fkdev.sbs/#website","url":"https://admin.fkdev.sbs/","name":"fkdev Admin","inLanguage":"tr-TR","publisher":{"@type":"Person","name":"Furkan Kırcı","url":"https://www.fkdev.sbs/"}},{"@type":"WebPage","@id":"https://admin.fkdev.sbs/dokumantasyon/kurulum/#page","url":"https://admin.fkdev.sbs/dokumantasyon/kurulum/","name":"Kurulum ve Yayınlama — fkdev Admin","description":"fkdev Admin kurulumu: GitHub’dan indirme, Apache ve Nginx ile kendi sunucunda yayınlama, CDN bağlantısı ve PHP ile gerçek veriye bağlama.","inLanguage":"tr-TR","dateModified":"2026-10-24","isPartOf":{"@id":"https://admin.fkdev.sbs/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Panel","item":"https://admin.fkdev.sbs/"},{"@type":"ListItem","position":2,"name":"Belgeler","item":"https://admin.fkdev.sbs/dokumantasyon/"},{"@type":"ListItem","position":3,"name":"Kurulum","item":"https://admin.fkdev.sbs/dokumantasyon/kurulum/"}]}]}</script>
+</head>
+<body class="fk-body fk-atmosphere">
+  <div class="fk-readbar" aria-hidden="true"></div>
+  <a class="skip" href="#icerik">İçeriğe atla</a>
+  <header class="fk-navbar" data-fk-autohide>
+    <div class="fk-navbar-in fk-glass">
+      <a class="fk-brand" href="/" aria-label="fkdev Admin ana sayfa"><b>fkdev <i>Admin</i></b><small>v1.0.0</small></a>
+      <nav class="fk-tabsbar" aria-label="Ana bölümler"><span class="fk-tabsbar-ind" aria-hidden="true"></span><a href="/">Panel</a><a href="/e-ticaret/">E-ticaret</a><a href="/crm/">CRM</a><a href="/siparisler/">Siparişler</a><a href="/dokumantasyon/" aria-current="page">Belgeler</a></nav>
+      <div class="fk-navbar-tools">
+        <details class="fk-dropdown ad-tool-notif">
+          <summary class="fk-btn fk-btn-icon" aria-label="Bildirimler, 3 okunmamış"><i class="fk-i fk-i-bell" aria-hidden="true"></i><b class="ad-count" aria-hidden="true">3</b></summary>
+          <div class="fk-dropdown-menu ad-notif">
+            <div class="ad-notif-head"><span>Bildirimler</span><span>3 yeni</span></div>
+            <a href="/siparisler/"><i class="fk-i fk-i-bag" aria-hidden="true"></i><span>Yeni sipariş #FK-10480<small>2 dakika önce · ₺2.340</small></span></a>
+            <a href="/crm/"><i class="fk-i fk-i-briefcase" aria-hidden="true"></i><span>Teklif kabul edildi<small>Nova Yazılım · ₺84.000</small></span></a>
+            <a href="/urunler/"><i class="fk-i fk-i-package" aria-hidden="true"></i><span>Stok uyarısı<small>Geist Kapüşonlu · 12 adet</small></span></a>
+            <a class="ad-notif-all" href="/bildirimler/">Tümünü gör <i class="fk-i fk-i-arrow-r" aria-hidden="true"></i></a>
+          </div>
+        </details>
+        <button class="fk-btn fk-btn-icon" type="button" data-fk-theme-toggle aria-label="Temayı değiştir"><i class="fk-i fk-i-sun" aria-hidden="true"></i><i class="fk-i fk-i-moon" aria-hidden="true"></i></button>
+        <details class="fk-dropdown ad-tool-avatar">
+          <summary aria-label="Hesap menüsü"><span class="fk-avatar fk-avatar-sm" aria-hidden="true">FK</span></summary>
+          <div class="fk-dropdown-menu ad-user-menu">
+            <a href="/profil/"><i class="fk-i fk-i-user" aria-hidden="true"></i>Profil</a>
+            <a href="/ayarlar/"><i class="fk-i fk-i-settings" aria-hidden="true"></i>Ayarlar</a>
+            <a href="/ayarlar/#guvenlik"><i class="fk-i fk-i-shield" aria-hidden="true"></i>Güvenlik</a>
+            <a href="/dokumantasyon/"><i class="fk-i fk-i-book" aria-hidden="true"></i>Belgeler</a>
+            <hr>
+            <a href="/giris/" data-demo-logout><i class="fk-i fk-i-logout" aria-hidden="true"></i>Çıkış yap</a>
+          </div>
+        </details>
+        <button class="fk-btn fk-btn-icon fk-burger" type="button" data-fk-menu="#fk-menu" aria-label="Menüyü aç"><svg class="fk-i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg><svg class="fk-i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="fk-menu" id="fk-menu">
+    <div class="fk-menu-in">
+      <nav aria-label="Panel sayfaları">
+        <div class="fk-menu-list">
+          <a href="/" style="--i:0">Genel bakış <span>01</span></a>
+          <a href="/e-ticaret/" style="--i:1">E-ticaret analizi <span>02</span></a>
+          <a href="/crm/" style="--i:2">CRM analizi <span>03</span></a>
+          <a href="/siparisler/" style="--i:3">Siparişler <span>04</span></a>
+          <a href="/musteriler/" style="--i:4">Müşteriler <span>05</span></a>
+          <a href="/urunler/" style="--i:5">Ürünler <span>06</span></a>
+          <a href="/profil/" style="--i:6">Profil <span>07</span></a>
+          <a href="/bildirimler/" style="--i:7">Bildirimler <span>08</span></a>
+          <a href="/ayarlar/" style="--i:8">Ayarlar <span>09</span></a>
+          <a href="/giris/" style="--i:9">Giriş <span>10</span></a>
+          <a href="/kayit/" style="--i:10">Kayıt <span>11</span></a>
+          <a href="/sifre-sifirla/" style="--i:11">Şifre sıfırlama <span>12</span></a>
+          <a href="/dogrulama/" style="--i:12">İki adımlı doğrulama <span>13</span></a>
+          <a href="/dokumantasyon/" style="--i:13">Belgeler <span>14</span></a>
+          <a href="/dokumantasyon/kurulum/" style="--i:14" aria-current="page">Kurulum <span>15</span></a>
+          <a href="/dokumantasyon/datatables/" style="--i:15">DataTables ve PHP <span>16</span></a>
+          <a href="/dokumantasyon/cdn/" style="--i:16">CDN <span>17</span></a>
+          <a href="/dokumantasyon/guvenlik/" style="--i:17">Güvenlik <span>18</span></a>
+          <a href="/dokumantasyon/ikonlar/" style="--i:18">İkon servisi <span>19</span></a>
+          <a href="/lisans/" style="--i:19">Lisans (MIT) <span>20</span></a>
+        </div>
+      </nav>
+      <div class="fk-menu-foot"><a href="https://www.fkdev.sbs/">fkdev.sbs</a><a href="https://ui.fkdev.sbs/">ui.fkdev.sbs</a><a href="https://admin.fkdev.sbs/" aria-current="true">admin.fkdev.sbs</a><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>fkdevs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>ik@fkdev.sbs</span></div>
+    </div>
+  </div>
+  <main class="ad-main fk-wrap" id="icerik">
+      <header class="ad-head">
+        <nav class="fk-crumbs fk-glass" aria-label="Sayfa yolu"><ol><li><a href="/"><i class="fk-i fk-i-home" aria-hidden="true"></i><span>Panel</span></a></li><li class="fk-sep" aria-hidden="true"><i class="fk-i fk-i-chev" aria-hidden="true"></i></li><li><a href="/dokumantasyon/">Belgeler</a></li><li class="fk-sep" aria-hidden="true"><i class="fk-i fk-i-chev" aria-hidden="true"></i></li><li><span aria-current="page">Kurulum</span></li></ol></nav>
+        <p><span class="fk-eyebrow fk-glass">Belgeler · Kurulum</span></p>
+        <h1>Beş dakikada <em>yayında.</em></h1>
+        <p class="fk-lede">GitHub’dan indir, sunucuna yükle, istersen PHP’ye bağla. Derleme adımı yok.</p>
+
+      </header>
+
+      <nav class="ad-toc" aria-label="Bu sayfada"><a href="#gereksinim">Gereksinimler</a><a href="#indir">İndir</a><a href="#apache">Apache (.htaccess)</a><a href="#nginx">Nginx</a><a href="#cdn">CDN bağlantısı</a><a href="#php">PHP’ye bağlama</a><a href="#veri">Panel kartlarını veriye bağlama</a></nav>
+      <div class="ad-doc">
+        <section id="gereksinim" aria-labelledby="gereksinim-t">
+          <h2 id="gereksinim-t"><span class="n">01</span>Gereksinimler</h2>
+          <div class="fk-table-wrap"><table class="fk-table"><thead><tr><th scope="col">Ne</th><th scope="col">Sürüm</th><th scope="col">Not</th></tr></thead><tbody><tr><td>Web sunucusu</td><td>Apache 2.4+ ya da Nginx</td><td>Statik dosya sunabilen her şey yeter</td></tr><tr><td>PHP</td><td>8.1+</td><td>Yalnızca gerçek veriye bağlayacaksan</td></tr><tr><td>MySQL / MariaDB</td><td>8.0+ / 10.6+</td><td><code>ornekler/php/schema.sql</code></td></tr><tr><td>HTTPS</td><td>Zorunlu</td><td>Oturum çerezleri <code>Secure</code> bayrağıyla gönderilir</td></tr></tbody></table></div>
+        </section>
+        <section id="indir" aria-labelledby="indir-t">
+          <h2 id="indir-t"><span class="n">02</span>İndir</h2>
+          <div class="codeblock"><div class="code-bar"><span class="lang">Terminal</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-bash">git clone https://github.com/fkircidevs/fkdev-admin.git
+cd fkdev-admin</code></pre></div><p>Ya da GitHub’da <strong>Code → Download ZIP</strong>. Dosyaları <code>public_html</code> (ya da sanal sunucunun kök klasörü) içine kopyala. <code>.htaccess</code> gizli dosyadır; FTP istemcinde “gizli dosyaları göster” açık olsun.</p>
+        </section>
+        <section id="apache" aria-labelledby="apache-t">
+          <h2 id="apache-t"><span class="n">03</span>Apache (.htaccess)</h2>
+          <p>Depodaki <code>.htaccess</code> hazırdır: HTTPS yönlendirmesi, temiz adresler, 404 sayfası, güvenlik başlıkları, CSP, önbellek ve hassas dosyaların engellenmesi. Kendi alan adını yazman yeter.</p><div class="codeblock"><div class="code-bar"><span class="lang">.htaccess</span><span class="title">.htaccess</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-apache">Options -Indexes -MultiViews
+DirectoryIndex index.php index.html
+AddDefaultCharset UTF-8
+FileETag None
+ServerSignature Off
+
+ErrorDocument 400 /404.html
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+ErrorDocument 410 /404.html
+
+&lt;IfModule mod_rewrite.c&gt;
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+  RewriteRule ^(.*/)?index\.html$ /$1 [L,R=301]
+
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.*)$ /$1/ [L,R=301]
+
+  RewriteRule ^404\.html$ - [L]
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteRule (^|/)\. - [F,L]
+  RewriteRule ^ornekler(/|$) - [F,L]
+&lt;/IfModule&gt;
+
+&lt;FilesMatch &quot;(\.(md|sql|log|ini|env|bak|old|orig|swp|sh|lock|dist)|^LICENSE|^composer\.json|^package\.json)$&quot;&gt;
+  &lt;IfModule mod_authz_core.c&gt;
+    Require all denied
+  &lt;/IfModule&gt;
+&lt;/FilesMatch&gt;
+&lt;FilesMatch &quot;^\.&quot;&gt;
+  &lt;IfModule mod_authz_core.c&gt;
+    Require all denied
+  &lt;/IfModule&gt;
+&lt;/FilesMatch&gt;
+
+&lt;IfModule mod_mime.c&gt;
+  AddType image/svg+xml .svg
+  AddType image/x-icon .ico
+  AddType application/xml .xml
+  AddType text/plain .txt
+  AddType application/json .json
+  AddCharset UTF-8 .html .css .js .xml .txt .svg .json
+&lt;/IfModule&gt;
+
+&lt;IfModule mod_deflate.c&gt;
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript text/javascript application/json image/svg+xml image/x-icon
+&lt;/IfModule&gt;
+&lt;IfModule mod_brotli.c&gt;
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml application/xml application/javascript text/javascript application/json image/svg+xml
+&lt;/IfModule&gt;
+
+&lt;IfModule mod_headers.c&gt;
+  Header always set Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; env=HTTPS
+  Header always set X-Content-Type-Options &quot;nosniff&quot;
+  Header always set X-Frame-Options &quot;DENY&quot;
+  Header always set Referrer-Policy &quot;strict-origin-when-cross-origin&quot;
+  Header always set Permissions-Policy &quot;camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()&quot;
+  Header always set Cross-Origin-Opener-Policy &quot;same-origin&quot;
+  Header always set Content-Security-Policy &quot;default-src 'self'; script-src 'self' https://ui.fkdev.sbs https://code.jquery.com https://cdn.datatables.net 'sha256-CGGEJHfqC7+LiSARylTxPdCMaADvzU9UYiv/dnwTiYU='; style-src 'self' 'unsafe-inline' https://ui.fkdev.sbs https://fonts.googleapis.com https://cdn.datatables.net; img-src 'self' data: https://ui.fkdev.sbs; font-src https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests&quot;
+  Header unset X-Powered-By
+
+  &lt;FilesMatch &quot;\.html$&quot;&gt;
+    Header set Cache-Control &quot;no-cache, must-revalidate&quot;
+  &lt;/FilesMatch&gt;
+  &lt;FilesMatch &quot;\.php$&quot;&gt;
+    Header set Cache-Control &quot;no-store&quot;
+  &lt;/FilesMatch&gt;
+  &lt;FilesMatch &quot;\.(css|js)$&quot;&gt;
+    Header set Cache-Control &quot;public, max-age=604800, stale-while-revalidate=86400&quot;
+  &lt;/FilesMatch&gt;
+  &lt;FilesMatch &quot;\.(svg|png|ico)$&quot;&gt;
+    Header set Cache-Control &quot;public, max-age=2592000&quot;
+  &lt;/FilesMatch&gt;
+  &lt;FilesMatch &quot;^404\.html$&quot;&gt;
+    Header set X-Robots-Tag &quot;noindex, follow&quot;
+  &lt;/FilesMatch&gt;
+&lt;/IfModule&gt;
+
+&lt;IfModule mod_php.c&gt;
+  php_flag display_errors off
+  php_flag expose_php off
+  php_value session.cookie_httponly 1
+  php_value session.cookie_secure 1
+  php_value session.use_strict_mode 1
+&lt;/IfModule&gt;</code></pre></div>
+        </section>
+        <section id="nginx" aria-labelledby="nginx-t">
+          <h2 id="nginx-t"><span class="n">04</span>Nginx</h2>
+          <div class="codeblock"><div class="code-bar"><span class="lang">Nginx</span><span class="title">/etc/nginx/sites-available/admin</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-apache">server {
+    listen 443 ssl http2;
+    server_name admin.ornek.com;
+    root /var/www/fkdev-admin;
+    index index.html index.php;
+
+    location ~ /\.(?!well-known) { deny all; }
+    location ^~ /ornekler/ { deny all; }
+    location ~* \.(md|sql|log|ini|env|bak)$ { deny all; }
+
+    location / { try_files $uri $uri/ =404; }
+    error_page 404 /404.html;
+
+    add_header X-Content-Type-Options &quot;nosniff&quot; always;
+    add_header X-Frame-Options &quot;DENY&quot; always;
+    add_header Referrer-Policy &quot;strict-origin-when-cross-origin&quot; always;
+    add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
+
+    location ~* \.(css|js|svg|woff2)$ { expires 7d; add_header Cache-Control &quot;public&quot;; }
+}</code></pre></div>
+        </section>
+        <section id="cdn" aria-labelledby="cdn-t">
+          <h2 id="cdn-t"><span class="n">05</span>CDN bağlantısı</h2>
+          <p>Her sayfanın <code>&lt;head&gt;</code> bölümü fkdev UI’yi sabit sürümle ve SRI imzasıyla yükler:</p><div class="codeblock"><div class="code-bar"><span class="lang">HTML</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://ui.fkdev.sbs/v2.4.1/fkdev-ui.min.css&quot; integrity=&quot;sha384-ywbvrnvLBhspdz061sb4+HVmL4bAnbhyuwKyDq0qCBVdEeLw2Le+aT+M0XhiumnM&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://ui.fkdev.sbs/v2.4.1/fkdev-icons.css&quot; integrity=&quot;sha384-7yUKhYWWrNB988JPR7B5hWqmWKk50ryeZ/b688YUSNn02PjgfTkhgNDnoRUX0w4V&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;script src=&quot;https://ui.fkdev.sbs/v2.4.1/fkdev-ui.min.js&quot; integrity=&quot;sha384-M00Zh34vyulzgDN4UvQcDJteSAYjql+zh1KP3B8lMfPikmAoJLDzbKnjWiFHPsvT&quot; crossorigin=&quot;anonymous&quot; defer&gt;&lt;/script&gt;</code></pre></div><p>Ayrıntılar için <a class="fk-link" href="/dokumantasyon/cdn/">CDN belgesi</a>.</p>
+        </section>
+        <section id="php" aria-labelledby="php-t">
+          <h2 id="php-t"><span class="n">06</span>PHP’ye bağlama</h2>
+
+          <ol>
+            <li>Veritabanını oluştur ve <code>ornekler/php/schema.sql</code> dosyasını çalıştır.</li>
+            <li><code>ornekler/php/</code> klasörünü web kökünün <strong>dışına</strong> taşı (ör. <code>/var/www/app/</code>); <code>config.example.php</code> dosyasını <code>config.php</code> olarak kopyalayıp doldur.</li>
+            <li>Statik sayfayı PHP’ye çevir: <code>giris/index.html</code> → <code>giris/index.php</code>. En üste bootstrap’ı ekle, formun içine CSRF alanını koy.</li>
+          </ol>
+          <div class="codeblock"><div class="code-bar"><span class="lang">PHP</span><span class="title">giris/index.php</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-php">&lt;?php require '/var/www/app/bootstrap.php'; ?&gt;
+&lt;!-- …sayfanın geri kalanı aynı… --&gt;
+&lt;form class=&quot;fk-form&quot; method=&quot;post&quot; action=&quot;/api/giris.php&quot; data-fk-validate&gt;
+  &lt;?= csrf_field() ?&gt;
+  &lt;!-- e-posta ve şifre alanları --&gt;
+&lt;/form&gt;</code></pre></div>
+          <div class="codeblock"><div class="code-bar"><span class="lang">PHP</span><span class="title">api/giris.php (web kökünde, tek satır)</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-php">&lt;?php
+require '/var/www/app/giris.php';</code></pre></div>
+          <div class="codeblock"><div class="code-bar"><span class="lang">PHP</span><span class="title">ornekler/php/bootstrap.php</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-php">&lt;?php
+declare(strict_types=1);
+
+$config = require __DIR__ . '/config.php';
+
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+error_reporting(E_ALL);
+
+header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
+header('Referrer-Policy: strict-origin-when-cross-origin');
+
+session_name($config['app']['session_name']);
+session_set_cookie_params([
+    'lifetime' =&gt; 0,
+    'path'     =&gt; '/',
+    'secure'   =&gt; true,
+    'httponly' =&gt; true,
+    'samesite' =&gt; 'Lax',
+]);
+ini_set('session.use_strict_mode', '1');
+ini_set('session.use_only_cookies', '1');
+session_start();
+
+function db(): PDO
+{
+    static $pdo = null;
+    global $config;
+    if ($pdo) {
+        return $pdo;
+    }
+    $c = $config['db'];
+    $pdo = new PDO(
+        sprintf('mysql:host=%s;dbname=%s;charset=utf8mb4', $c['host'], $c['name']),
+        $c['user'],
+        $c['pass'],
+        [
+            PDO::ATTR_ERRMODE            =&gt; PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   =&gt; false,
+        ]
+    );
+    return $pdo;
+}
+
+function e(?string $s): string
+{
+    return htmlspecialchars((string) $s, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
+
+function csrf_token(): string
+{
+    if (empty($_SESSION['csrf'])) {
+        $_SESSION['csrf'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf'];
+}
+
+function csrf_field(): string
+{
+    return '&lt;input type=&quot;hidden&quot; name=&quot;csrf&quot; value=&quot;' . e(csrf_token()) . '&quot;&gt;';
+}
+
+function csrf_check(): void
+{
+    $sent = $_POST['csrf'] ?? ($_SERVER['HTTP_X_CSRF_TOKEN'] ?? '');
+    if (!is_string($sent) || !hash_equals(csrf_token(), $sent)) {
+        http_response_code(419);
+        exit('Oturum süresi doldu. Sayfayı yenileyip tekrar dene.');
+    }
+}
+
+function client_ip(): string
+{
+    return $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+}
+
+function too_many_attempts(string $email): bool
+{
+    global $config;
+    $stmt = db()-&gt;prepare(
+        'SELECT COUNT(*) FROM login_attempts
+         WHERE success = 0 AND (ip = ? OR email = ?)
+           AND created_at &gt; NOW() - INTERVAL ? MINUTE'
+    );
+    $stmt-&gt;execute([client_ip(), $email, (int) $config['app']['lock_minutes']]);
+    return (int) $stmt-&gt;fetchColumn() &gt;= (int) $config['app']['max_attempts'];
+}
+
+function log_attempt(string $email, bool $ok): void
+{
+    db()-&gt;prepare('INSERT INTO login_attempts (ip, email, success) VALUES (?, ?, ?)')
+        -&gt;execute([client_ip(), $email, $ok ? 1 : 0]);
+}
+
+function current_user(): ?array
+{
+    if (empty($_SESSION['uid'])) {
+        return null;
+    }
+    $stmt = db()-&gt;prepare('SELECT id, name, email, role FROM users WHERE id = ? AND is_active = 1');
+    $stmt-&gt;execute([$_SESSION['uid']]);
+    return $stmt-&gt;fetch() ?: null;
+}
+
+function require_login(array $roles = []): array
+{
+    $user = current_user();
+    if (!$user) {
+        header('Location: /giris/');
+        exit;
+    }
+    if ($roles &amp;&amp; !in_array($user['role'], $roles, true)) {
+        http_response_code(403);
+        exit('Bu sayfayı görme yetkin yok.');
+    }
+    return $user;
+}
+
+function redirect_with(string $url, string $message, string $type = 'success'): never
+{
+    $_SESSION['flash'] = [$message, $type];
+    header('Location: ' . $url);
+    exit;
+}</code></pre></div>
+          <div class="codeblock"><div class="code-bar"><span class="lang">PHP</span><span class="title">ornekler/php/giris.php</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-php">&lt;?php
+declare(strict_types=1);
+require __DIR__ . '/bootstrap.php';
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit;
+}
+csrf_check();
+
+$email    = mb_strtolower(trim((string) ($_POST['email'] ?? '')));
+$password = (string) ($_POST['password'] ?? '');
+
+if (too_many_attempts($email)) {
+    redirect_with('/giris/', 'Çok fazla deneme yapıldı. 15 dakika sonra tekrar dene.', 'danger');
+}
+
+$stmt = db()-&gt;prepare('SELECT id, password_hash FROM users WHERE email = ? AND is_active = 1 LIMIT 1');
+$stmt-&gt;execute([$email]);
+$user = $stmt-&gt;fetch();
+
+$ok = $user &amp;&amp; password_verify($password, $user['password_hash']);
+log_attempt($email, (bool) $ok);
+
+if (!$ok) {
+    usleep(random_int(200000, 400000));
+    redirect_with('/giris/', 'E-posta ya da şifre hatalı.', 'danger');
+}
+
+if (password_needs_rehash($user['password_hash'], PASSWORD_DEFAULT)) {
+    db()-&gt;prepare('UPDATE users SET password_hash = ? WHERE id = ?')
+        -&gt;execute([password_hash($password, PASSWORD_DEFAULT), $user['id']]);
+}
+
+session_regenerate_id(true);
+$_SESSION['uid'] = (int) $user['id'];
+unset($_SESSION['csrf']);
+db()-&gt;prepare('UPDATE users SET last_login_at = NOW() WHERE id = ?')-&gt;execute([$user['id']]);
+
+redirect_with('/', 'Tekrar hoş geldin!');</code></pre></div>
+          <div class="codeblock"><div class="code-bar"><span class="lang">PHP</span><span class="title">ornekler/php/kayit.php</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-php">&lt;?php
+declare(strict_types=1);
+require __DIR__ . '/bootstrap.php';
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit;
+}
+csrf_check();
+
+$name     = trim((string) ($_POST['name'] ?? ''));
+$email    = mb_strtolower(trim((string) ($_POST['email'] ?? '')));
+$password = (string) ($_POST['password'] ?? '');
+$confirm  = (string) ($_POST['password_confirm'] ?? '');
+$terms    = isset($_POST['terms']);
+
+$errors = [];
+if (mb_strlen($name) &lt; 2 || mb_strlen($name) &gt; 120) $errors[] = 'Ad 2–120 karakter olmalı.';
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Geçerli bir e-posta yaz.';
+if (mb_strlen($password) &lt; 10) $errors[] = 'Şifre en az 10 karakter olmalı.';
+if (!hash_equals($password, $confirm)) $errors[] = 'Şifreler aynı değil.';
+if (!$terms) $errors[] = 'Kullanım koşullarını onaylaman gerekiyor.';
+
+if ($errors) {
+    redirect_with('/kayit/', implode(' ', $errors), 'danger');
+}
+
+try {
+    db()-&gt;prepare('INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)')
+        -&gt;execute([$name, $email, password_hash($password, PASSWORD_DEFAULT)]);
+} catch (PDOException $ex) {
+    if ($ex-&gt;getCode() === '23000') {
+        redirect_with('/kayit/', 'Bu e-posta ile hesap açılamadı. Hesabın varsa giriş yap.', 'danger');
+    }
+    error_log($ex-&gt;getMessage());
+    redirect_with('/kayit/', 'Şu an kayıt yapılamıyor, biraz sonra tekrar dene.', 'danger');
+}
+
+session_regenerate_id(true);
+$_SESSION['uid'] = (int) db()-&gt;lastInsertId();
+redirect_with('/', 'Hesabın oluşturuldu, hoş geldin!');</code></pre></div>
+          <div class="codeblock"><div class="code-bar"><span class="lang">PHP</span><span class="title">ornekler/php/cikis.php</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-php">&lt;?php
+declare(strict_types=1);
+require __DIR__ . '/bootstrap.php';
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit;
+}
+csrf_check();
+
+$_SESSION = [];
+$p = session_get_cookie_params();
+setcookie(session_name(), '', [
+    'expires'  =&gt; time() - 3600,
+    'path'     =&gt; $p['path'],
+    'secure'   =&gt; $p['secure'],
+    'httponly' =&gt; $p['httponly'],
+    'samesite' =&gt; $p['samesite'],
+]);
+session_destroy();
+
+header('Location: /giris/');
+exit;</code></pre></div>
+        </section>
+        <section id="veri" aria-labelledby="veri-t">
+          <h2 id="veri-t"><span class="n">07</span>Panel kartlarını veriye bağlama</h2>
+
+          <div class="codeblock"><div class="code-bar"><span class="lang">PHP</span><span class="title">index.php</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-php">&lt;?php
+$user = require_login(['admin', 'editor']);
+$ciro = db()-&gt;query(&quot;SELECT COALESCE(SUM(total), 0) FROM orders WHERE created_at &gt;= DATE_FORMAT(NOW(), '%Y-%m-01') AND status &lt;&gt; 'İade'&quot;)-&gt;fetchColumn();
+$bekleyen = db()-&gt;query(&quot;SELECT COUNT(*) FROM orders WHERE status = 'Bekliyor'&quot;)-&gt;fetchColumn();
+?&gt;
+&lt;article class=&quot;ad-kpi&quot;&gt;
+  &lt;div class=&quot;ad-kpi-top&quot;&gt;&lt;span class=&quot;ad-kpi-label&quot;&gt;&lt;span class=&quot;ad-ico&quot;&gt;&lt;i class=&quot;fk-i fk-i-lira&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;Ciro&lt;/span&gt;&lt;/div&gt;
+  &lt;strong&gt;₺&lt;?= number_format((float) $ciro, 0, ',', '.') ?&gt;&lt;/strong&gt;
+  &lt;small&gt;Bu ay&lt;/small&gt;
+&lt;/article&gt;
+&lt;p&gt;&lt;?= e($user['name']) ?&gt;, &lt;?= (int) $bekleyen ?&gt; sipariş onay bekliyor.&lt;/p&gt;</code></pre></div>
+          <div class="codeblock"><div class="code-bar"><span class="lang">PHP</span><span class="title">Yönlendirme sonrası bildirim</span><button class="copy-btn" type="button"><i class="fk-i fk-i-copy" aria-hidden="true"></i>Kopyala</button></div><pre><code class="lang-php">&lt;?php if (!empty($_SESSION['flash'])): [$m, $t] = $_SESSION['flash']; unset($_SESSION['flash']); ?&gt;
+  &lt;script&gt;addEventListener('DOMContentLoaded', () =&gt; FK.toast(&lt;?= json_encode($m) ?&gt;, &lt;?= json_encode($t) ?&gt;));&lt;/script&gt;
+&lt;?php endif; ?&gt;</code></pre></div>
+          <div class="callout callout-warn"><i class="fk-i fk-i-warn" aria-hidden="true"></i><div><p><strong>CSP ve satır içi betik</strong>Depodaki CSP satır içi betikleri engeller (head’deki tema betiği hariç, o hash ile izinli). Bildirim için bu küçük betiği kullanacaksan ya ayrı bir <code>.js</code> dosyasına taşı ya da CSP’ye nonce ekle.</p></div></div>
+        </section>
+      </div>
+      <nav class="ad-pager" aria-label="Belgeler arası"><a href="/dokumantasyon/"><span>← Önceki</span><b>Belgeler</b></a><a class="next" href="/dokumantasyon/datatables/"><span>Sonraki →</span><b>DataTables ve PHP</b></a></nav>
+  </main>
+  <footer class="fk-fc-wrap">
+    <div class="fk-fc">
+      <a class="fk-fc-brand" href="/">fkdev <i>Admin</i></a>
+      <p class="fk-fc-tag">Admin dashboard · fkdev UI v2.4.1 · MIT</p>
+      <ul class="fk-fc-social"><li><a href="https://linkedin.com/in/furkankirci" target="_blank" rel="noopener me" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4V9.5Z"/></svg></a></li><li><a href="https://github.com/furkankirci" target="_blank" rel="noopener me" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg></a></li><li><a href="https://x.com/furkankirci" target="_blank" rel="noopener me" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78L17.75 3Zm-1.08 16.2h1.7L7.4 4.73H5.57l11.1 14.47Z"/></svg></a></li><li><a href="https://medium.com/@furkankirci" target="_blank" rel="noopener me" aria-label="Medium"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 12a6.75 6.75 0 1 1-13.5 0 6.75 6.75 0 0 1 13.5 0Zm7.4 0c0 3.5-1.5 6.36-3.37 6.36S14.16 15.5 14.16 12s1.51-6.36 3.37-6.36S20.9 8.5 20.9 12ZM24 12c0 3.13-.53 5.68-1.18 5.68s-1.18-2.55-1.18-5.68.53-5.68 1.18-5.68S24 8.87 24 12Z"/></svg></a></li></ul>
+      <nav class="fk-fc-nav" aria-label="Alt menü"><ul><li><a href="/">Panel</a></li><li><a href="/e-ticaret/">E-ticaret</a></li><li><a href="/crm/">CRM</a></li><li><a href="/siparisler/">Siparişler</a></li><li><a href="/musteriler/">Müşteriler</a></li><li><a href="/urunler/">Ürünler</a></li><li><a href="/profil/">Profil</a></li><li><a href="/bildirimler/">Bildirimler</a></li><li><a href="/ayarlar/">Ayarlar</a></li><li><a href="/dokumantasyon/">Belgeler</a></li><li><a href="/dokumantasyon/guvenlik/">Güvenlik</a></li><li><a href="/lisans/">Lisans</a></li><li><a href="https://github.com/fkircidevs/fkdev-admin">GitHub ↗</a></li><li><a href="https://ui.fkdev.sbs">ui.fkdev.sbs ↗</a></li></ul></nav>
+      <ul class="fk-fc-contact">
+        <li><button type="button" data-fk-copy="fkdevs" data-fk-msg="WhatsApp kullanıcı adı kopyalandı: fkdevs"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></span>fkdevs</button></li>
+        <li><a href="mailto:merhaba@fkdev.sbs"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>merhaba@fkdev.sbs</a></li>
+        <li><a href="mailto:ik@fkdev.sbs"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>ik@fkdev.sbs</a></li>
+        <li><a href="https://yukle.fkdev.sbs/" target="_blank" rel="noopener"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M6 9l6-6 6 6M4 20h16"/></svg></span>yukle.fkdev.sbs</a></li>
+      </ul>
+      <nav class="fk-fc-eco" aria-label="fkdev ekosistemi"><a href="https://www.fkdev.sbs/">fkdev.sbs</a><a href="https://ui.fkdev.sbs/">ui.fkdev.sbs</a><a href="https://admin.fkdev.sbs/" aria-current="true">admin.fkdev.sbs</a></nav>
+      <div class="fk-fc-bottom">
+        <p>© 2026 Furkan Kırcı · MIT</p>
+        <p class="fk-fc-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Bursa · Nerede isterseniz</p>
+        <button class="fk-fc-top" type="button" data-fk-top>Başa dön <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ui.fkdev.sbs/v2.4.1/fkdev-ui.min.js" integrity="sha384-M00Zh34vyulzgDN4UvQcDJteSAYjql+zh1KP3B8lMfPikmAoJLDzbKnjWiFHPsvT" crossorigin="anonymous" defer data-fk-yedek="fkdev-ui.min.js"></script>
+  <script src="/assets/admin.js?v=1.1.0" defer></script>
+</body>
+</html>

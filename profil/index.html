@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>(function(d){var r=d.documentElement;r.classList.add('js');try{var t=localStorage.getItem('fk-theme');if(t==='dark'||t==='light')r.setAttribute('data-theme',t)}catch(e){}})(document)</script>
+  <title>Profil — fkdev Admin</title>
+  <meta name="description" content="Kullanıcı profili: kişisel bilgiler, iletişim, son etkinlikler, yetkiler, ekip ve sorumlu olunan müşteriler.">
+  <meta name="author" content="Furkan Kırcı">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#050505" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://admin.fkdev.sbs/profil/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="fkdev Admin">
+  <meta property="og:url" content="https://admin.fkdev.sbs/profil/">
+  <meta property="og:title" content="Profil — fkdev Admin">
+  <meta property="og:description" content="Kullanıcı profili: kişisel bilgiler, iletişim, son etkinlikler, yetkiler, ekip ve sorumlu olunan müşteriler.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://ui.fkdev.sbs" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&amp;family=Geist:wght@300..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+  <script src="/assets/fkdev-yedek.js?v=1.0.0"></script>
+  <link rel="stylesheet" href="https://ui.fkdev.sbs/v2.4.1/fkdev-ui.min.css" integrity="sha384-ywbvrnvLBhspdz061sb4+HVmL4bAnbhyuwKyDq0qCBVdEeLw2Le+aT+M0XhiumnM" crossorigin="anonymous" data-fk-yedek="fkdev-ui.min.css">
+  <link rel="stylesheet" href="https://ui.fkdev.sbs/v2.4.1/fkdev-icons.css" integrity="sha384-7yUKhYWWrNB988JPR7B5hWqmWKk50ryeZ/b688YUSNn02PjgfTkhgNDnoRUX0w4V" crossorigin="anonymous" data-fk-yedek="fkdev-icons.css">
+  <link rel="stylesheet" href="/assets/admin.css?v=1.1.0">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://admin.fkdev.sbs/#website","url":"https://admin.fkdev.sbs/","name":"fkdev Admin","inLanguage":"tr-TR","publisher":{"@type":"Person","name":"Furkan Kırcı","url":"https://www.fkdev.sbs/"}},{"@type":"WebPage","@id":"https://admin.fkdev.sbs/profil/#page","url":"https://admin.fkdev.sbs/profil/","name":"Profil — fkdev Admin","description":"Kullanıcı profili: kişisel bilgiler, iletişim, son etkinlikler, yetkiler, ekip ve sorumlu olunan müşteriler.","inLanguage":"tr-TR","dateModified":"2026-10-25","isPartOf":{"@id":"https://admin.fkdev.sbs/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Panel","item":"https://admin.fkdev.sbs/"},{"@type":"ListItem","position":2,"name":"Profil","item":"https://admin.fkdev.sbs/profil/"}]}]}</script>
+</head>
+<body class="fk-body fk-atmosphere">
+  <div class="fk-readbar" aria-hidden="true"></div>
+  <a class="skip" href="#icerik">İçeriğe atla</a>
+  <header class="fk-navbar" data-fk-autohide>
+    <div class="fk-navbar-in fk-glass">
+      <a class="fk-brand" href="/" aria-label="fkdev Admin ana sayfa"><b>fkdev <i>Admin</i></b><small>v1.0.0</small></a>
+      <nav class="fk-tabsbar" aria-label="Ana bölümler"><span class="fk-tabsbar-ind" aria-hidden="true"></span><a href="/">Panel</a><a href="/e-ticaret/">E-ticaret</a><a href="/crm/">CRM</a><a href="/siparisler/">Siparişler</a><a href="/dokumantasyon/">Belgeler</a></nav>
+      <div class="fk-navbar-tools">
+        <details class="fk-dropdown ad-tool-notif">
+          <summary class="fk-btn fk-btn-icon" aria-label="Bildirimler, 3 okunmamış"><i class="fk-i fk-i-bell" aria-hidden="true"></i><b class="ad-count" aria-hidden="true">3</b></summary>
+          <div class="fk-dropdown-menu ad-notif">
+            <div class="ad-notif-head"><span>Bildirimler</span><span>3 yeni</span></div>
+            <a href="/siparisler/"><i class="fk-i fk-i-bag" aria-hidden="true"></i><span>Yeni sipariş #FK-10480<small>2 dakika önce · ₺2.340</small></span></a>
+            <a href="/crm/"><i class="fk-i fk-i-briefcase" aria-hidden="true"></i><span>Teklif kabul edildi<small>Nova Yazılım · ₺84.000</small></span></a>
+            <a href="/urunler/"><i class="fk-i fk-i-package" aria-hidden="true"></i><span>Stok uyarısı<small>Geist Kapüşonlu · 12 adet</small></span></a>
+            <a class="ad-notif-all" href="/bildirimler/">Tümünü gör <i class="fk-i fk-i-arrow-r" aria-hidden="true"></i></a>
+          </div>
+        </details>
+        <button class="fk-btn fk-btn-icon" type="button" data-fk-theme-toggle aria-label="Temayı değiştir"><i class="fk-i fk-i-sun" aria-hidden="true"></i><i class="fk-i fk-i-moon" aria-hidden="true"></i></button>
+        <details class="fk-dropdown ad-tool-avatar">
+          <summary aria-label="Hesap menüsü"><span class="fk-avatar fk-avatar-sm" aria-hidden="true">FK</span></summary>
+          <div class="fk-dropdown-menu ad-user-menu">
+            <a href="/profil/"><i class="fk-i fk-i-user" aria-hidden="true"></i>Profil</a>
+            <a href="/ayarlar/"><i class="fk-i fk-i-settings" aria-hidden="true"></i>Ayarlar</a>
+            <a href="/ayarlar/#guvenlik"><i class="fk-i fk-i-shield" aria-hidden="true"></i>Güvenlik</a>
+            <a href="/dokumantasyon/"><i class="fk-i fk-i-book" aria-hidden="true"></i>Belgeler</a>
+            <hr>
+            <a href="/giris/" data-demo-logout><i class="fk-i fk-i-logout" aria-hidden="true"></i>Çıkış yap</a>
+          </div>
+        </details>
+        <button class="fk-btn fk-btn-icon fk-burger" type="button" data-fk-menu="#fk-menu" aria-label="Menüyü aç"><svg class="fk-i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg><svg class="fk-i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="fk-menu" id="fk-menu">
+    <div class="fk-menu-in">
+      <nav aria-label="Panel sayfaları">
+        <div class="fk-menu-list">
+          <a href="/" style="--i:0">Genel bakış <span>01</span></a>
+          <a href="/e-ticaret/" style="--i:1">E-ticaret analizi <span>02</span></a>
+          <a href="/crm/" style="--i:2">CRM analizi <span>03</span></a>
+          <a href="/siparisler/" style="--i:3">Siparişler <span>04</span></a>
+          <a href="/musteriler/" style="--i:4">Müşteriler <span>05</span></a>
+          <a href="/urunler/" style="--i:5">Ürünler <span>06</span></a>
+          <a href="/profil/" style="--i:6" aria-current="page">Profil <span>07</span></a>
+          <a href="/bildirimler/" style="--i:7">Bildirimler <span>08</span></a>
+          <a href="/ayarlar/" style="--i:8">Ayarlar <span>09</span></a>
+          <a href="/giris/" style="--i:9">Giriş <span>10</span></a>
+          <a href="/kayit/" style="--i:10">Kayıt <span>11</span></a>
+          <a href="/sifre-sifirla/" style="--i:11">Şifre sıfırlama <span>12</span></a>
+          <a href="/dogrulama/" style="--i:12">İki adımlı doğrulama <span>13</span></a>
+          <a href="/dokumantasyon/" style="--i:13">Belgeler <span>14</span></a>
+          <a href="/dokumantasyon/kurulum/" style="--i:14">Kurulum <span>15</span></a>
+          <a href="/dokumantasyon/datatables/" style="--i:15">DataTables ve PHP <span>16</span></a>
+          <a href="/dokumantasyon/cdn/" style="--i:16">CDN <span>17</span></a>
+          <a href="/dokumantasyon/guvenlik/" style="--i:17">Güvenlik <span>18</span></a>
+          <a href="/dokumantasyon/ikonlar/" style="--i:18">İkon servisi <span>19</span></a>
+          <a href="/lisans/" style="--i:19">Lisans (MIT) <span>20</span></a>
+        </div>
+      </nav>
+      <div class="fk-menu-foot"><a href="https://www.fkdev.sbs/">fkdev.sbs</a><a href="https://ui.fkdev.sbs/">ui.fkdev.sbs</a><a href="https://admin.fkdev.sbs/" aria-current="true">admin.fkdev.sbs</a><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>fkdevs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>ik@fkdev.sbs</span></div>
+    </div>
+  </div>
+  <main class="ad-main fk-wrap" id="icerik">
+      <header class="ad-head">
+        <nav class="fk-crumbs fk-glass" aria-label="Sayfa yolu"><ol><li><a href="/"><i class="fk-i fk-i-home" aria-hidden="true"></i><span>Panel</span></a></li><li class="fk-sep" aria-hidden="true"><i class="fk-i fk-i-chev" aria-hidden="true"></i></li><li><span aria-current="page">Profil</span></li></ol></nav>
+        <p><span class="fk-eyebrow fk-glass">Hesap · Profil</span></p>
+        <h1>Merhaba, <em data-ad-me="p-ad" data-ad-first>Furkan.</em></h1>
+        <p class="fk-lede">Ekibin seni burada görür: kim olduğun, neyle uğraştığın ve son yaptıkların.</p>
+      </header>
+
+      <section class="ad-panel fk-reveal ad-profile">
+        <span class="fk-avatar fk-avatar-lg ad-avatar-xl" data-ad-me-avatar aria-hidden="true">FK</span>
+        <div>
+          <h2 data-ad-me="p-ad">Furkan Kırcı</h2>
+          <p class="role"><span data-ad-me="p-unvan">Kurucu · Yazılım geliştirici</span> · <span data-ad-me="p-sirket">fkdev</span></p>
+          <p class="bio" data-ad-me="p-bio">Yazılımcı · Stratejist · Motivasyon Koçu</p>
+          <ul class="ad-chips">
+            <li><i class="fk-i fk-i-pin" aria-hidden="true"></i><span data-ad-me="p-konum">Bursa, Türkiye</span></li>
+            <li><i class="fk-i fk-i-mail" aria-hidden="true"></i><a class="fk-link" href="mailto:merhaba@fkdev.sbs" data-ad-me="p-mail" data-ad-href="mailto:">merhaba@fkdev.sbs</a></li>
+            <li><i class="fk-i fk-i-globe" aria-hidden="true"></i><a class="fk-link" href="https://www.fkdev.sbs" data-ad-me="p-site" data-ad-href="https://" rel="noopener">www.fkdev.sbs</a></li>
+            <li><i class="fk-i fk-i-github" aria-hidden="true"></i><a class="fk-link" href="https://github.com/furkankirci" data-ad-me="p-github" data-ad-href="https://github.com/" rel="noopener me">furkankirci</a></li>
+            <li><i class="fk-i fk-i-user" aria-hidden="true"></i>@<span data-ad-me="p-kullanici">furkankirci</span></li>
+          </ul>
+        </div>
+        <div class="ad-profile-actions">
+          <a class="fk-btn fk-btn-primary" href="/ayarlar/#profil"><i class="fk-i fk-i-edit" aria-hidden="true"></i>Profili düzenle</a>
+          <a class="fk-btn fk-btn-ghost" href="/ayarlar/#guvenlik"><i class="fk-i fk-i-shield" aria-hidden="true"></i>Güvenlik</a>
+          <button class="fk-btn fk-btn-ghost" type="button" data-fk-copy="https://admin.fkdev.sbs/profil/" data-fk-msg="Profil bağlantısı kopyalandı"><i class="fk-i fk-i-link" aria-hidden="true"></i>Bağlantıyı kopyala</button>
+        </div>
+      </section>
+
+      <div class="ad-four ad-sec">
+        <article class="ad-kpi fk-reveal" style="padding-bottom:22px"><div class="ad-kpi-top"><span class="ad-kpi-label"><span class="ad-ico"><i class="fk-i fk-i-bag" aria-hidden="true"></i></span>Sipariş</span></div><strong data-fk-count="1284">1284</strong><small>Yönettiği · son 30 gün</small></article>
+        <article class="ad-kpi fk-reveal" style="padding-bottom:22px"><div class="ad-kpi-top"><span class="ad-kpi-label"><span class="ad-ico"><i class="fk-i fk-i-briefcase" aria-hidden="true"></i></span>Teklif</span></div><strong data-fk-count="38">38</strong><small>Kazanılan · bu çeyrek</small></article>
+        <article class="ad-kpi fk-reveal" style="padding-bottom:22px"><div class="ad-kpi-top"><span class="ad-kpi-label"><span class="ad-ico"><i class="fk-i fk-i-check" aria-hidden="true"></i></span>Görev</span></div><strong data-fk-count="126">126</strong><small>Tamamlanan · bu yıl</small></article>
+        <article class="ad-kpi fk-reveal" style="padding-bottom:22px"><div class="ad-kpi-top"><span class="ad-kpi-label"><span class="ad-ico"><i class="fk-i fk-i-calendar" aria-hidden="true"></i></span>Ekipte</span></div><strong data-fk-count="651">651</strong><small>Gün · 12 Ocak 2025'ten beri</small></article>
+      </div>
+
+      <h2 class="ad-title"><span class="n">01</span>Son <em>yaptıkların.</em></h2>
+      <div class="ad-split">
+        <section class="ad-panel fk-reveal">
+          <div class="ad-panel-head"><div><h2>Etkinlik</h2><p>Son 7 gün</p></div><a class="fk-btn fk-btn-ghost fk-btn-sm" href="/bildirimler/">Bildirimler <i class="fk-i fk-i-arrow-r" aria-hidden="true"></i></a></div>
+          <ol class="fk-timeline">
+            <li class="is-done"><time>Bugün · 09:40</time><strong>#FK-10479 siparişini kargoya verdi</strong><p>Yurtiçi Kargo · takip kodu oluşturuldu.</p></li>
+            <li class="is-done"><time>Bugün · 08:15</time><strong>Geist Kapüşonlu için stok girdi</strong><p>+120 adet · Bursa depo.</p></li>
+            <li class="is-done"><time>Dün · 17:02</time><strong>Nova Yazılım teklifini kazandı</strong><p>₺84.000 · CRM'de "Kazanıldı" sütununa taşındı.</p></li>
+            <li class="is-done"><time>22 Ekim · 14:30</time><strong>Selin Aydın'ı editor yaptı</strong><p>Ekip ayarları.</p></li>
+            <li><time>20 Ekim · 10:05</time><strong>Yeni API anahtarı oluşturdu</strong><p>Raporlama · siparis:okuma, musteri:okuma.</p></li>
+          </ol>
+        </section>
+        <div class="fk-stack">
+          <section class="ad-panel fk-reveal">
+            <div class="ad-panel-head"><div><h2>Hakkında</h2><p>Hesap</p></div></div>
+            <dl class="fk-dl">
+              <dt>Rol</dt><dd><span class="fk-badge fk-badge-solid">admin</span></dd>
+              <dt>Plan</dt><dd data-ad-plan>Pro</dd>
+              <dt>İki adımlı</dt><dd data-ad-2fa><span class="fk-badge fk-badge-success">Açık</span></dd>
+              <dt>Saat dilimi</dt><dd data-ad-tz>Europe/Istanbul</dd>
+              <dt>Katılım</dt><dd>12 Ocak 2025</dd>
+            </dl>
+          </section>
+          <section class="ad-panel fk-reveal">
+            <div class="ad-panel-head"><div><h2>Yetkiler</h2><p>admin rolü</p></div></div>
+            <div class="fk-cluster" style="--fk-gap:6px"><span class="fk-badge">sipariş</span><span class="fk-badge">ürün</span><span class="fk-badge">müşteri</span><span class="fk-badge">CRM</span><span class="fk-badge">faturalar</span><span class="fk-badge">ekip</span><span class="fk-badge">API</span><span class="fk-badge">ayarlar</span></div>
+          </section>
+        </div>
+      </div>
+
+      <h2 class="ad-title"><span class="n">02</span>Birlikte <em>çalıştıkların.</em></h2>
+      <div class="ad-even">
+        <section class="ad-panel fk-reveal">
+          <div class="ad-panel-head"><div><h2>Ekip</h2><p>4 kişi</p></div><a class="fk-btn fk-btn-ghost fk-btn-sm" href="/ayarlar/#ekip">Yönet <i class="fk-i fk-i-arrow-r" aria-hidden="true"></i></a></div>
+          <ul class="ad-rows">
+            <li><span class="fk-avatar fk-avatar-sm" aria-hidden="true">SA</span><span><strong>Selin Aydın</strong><small>selin@ornek.com</small></span><span class="fk-badge">editor</span></li>
+            <li><span class="fk-avatar fk-avatar-sm" aria-hidden="true">CÖ</span><span><strong>Can Öztürk</strong><small>can@ornek.com</small></span><span class="fk-badge">editor</span></li>
+            <li><span class="fk-avatar fk-avatar-sm" aria-hidden="true">EŞ</span><span><strong>Elif Şahin</strong><small>elif@ornek.com</small></span><span class="fk-badge">viewer</span></li>
+            <li><span class="fk-avatar fk-avatar-sm" aria-hidden="true">BÇ</span><span><strong>Burak Çelik</strong><small>burak@ornek.com</small></span><span class="fk-badge">viewer</span></li>
+          </ul>
+        </section>
+        <section class="ad-panel fk-reveal">
+          <div class="ad-panel-head"><div><h2>Sorumlu olduğu müşteriler</h2><p>CRM</p></div><a class="fk-btn fk-btn-ghost fk-btn-sm" href="/musteriler/">Tümü <i class="fk-i fk-i-arrow-r" aria-hidden="true"></i></a></div>
+          <ul class="ad-rows">
+            <li><span class="ad-thumb"><i class="fk-i fk-i-briefcase" aria-hidden="true"></i></span><span><strong>Nova Yazılım</strong><small>Teklif kabul edildi · dün</small></span><span class="val">₺84.000</span></li>
+            <li><span class="ad-thumb"><i class="fk-i fk-i-briefcase" aria-hidden="true"></i></span><span><strong>Atlas Lojistik</strong><small>Görüşme · 28 Ekim</small></span><span class="val">₺46.500</span></li>
+            <li><span class="ad-thumb"><i class="fk-i fk-i-briefcase" aria-hidden="true"></i></span><span><strong>Mavi Tekstil</strong><small>Teklif gönderildi</small></span><span class="val">₺31.200</span></li>
+            <li><span class="ad-thumb"><i class="fk-i fk-i-briefcase" aria-hidden="true"></i></span><span><strong>Kuzey Mobilya</strong><small>Sözleşme yenileme · Kasım</small></span><span class="val">₺22.800</span></li>
+          </ul>
+        </section>
+      </div>
+  </main>
+  <footer class="fk-fc-wrap">
+    <div class="fk-fc">
+      <a class="fk-fc-brand" href="/">fkdev <i>Admin</i></a>
+      <p class="fk-fc-tag">Admin dashboard · fkdev UI v2.4.1 · MIT</p>
+      <ul class="fk-fc-social"><li><a href="https://linkedin.com/in/furkankirci" target="_blank" rel="noopener me" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4V9.5Z"/></svg></a></li><li><a href="https://github.com/furkankirci" target="_blank" rel="noopener me" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg></a></li><li><a href="https://x.com/furkankirci" target="_blank" rel="noopener me" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78L17.75 3Zm-1.08 16.2h1.7L7.4 4.73H5.57l11.1 14.47Z"/></svg></a></li><li><a href="https://medium.com/@furkankirci" target="_blank" rel="noopener me" aria-label="Medium"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 12a6.75 6.75 0 1 1-13.5 0 6.75 6.75 0 0 1 13.5 0Zm7.4 0c0 3.5-1.5 6.36-3.37 6.36S14.16 15.5 14.16 12s1.51-6.36 3.37-6.36S20.9 8.5 20.9 12ZM24 12c0 3.13-.53 5.68-1.18 5.68s-1.18-2.55-1.18-5.68.53-5.68 1.18-5.68S24 8.87 24 12Z"/></svg></a></li></ul>
+      <nav class="fk-fc-nav" aria-label="Alt menü"><ul><li><a href="/">Panel</a></li><li><a href="/e-ticaret/">E-ticaret</a></li><li><a href="/crm/">CRM</a></li><li><a href="/siparisler/">Siparişler</a></li><li><a href="/musteriler/">Müşteriler</a></li><li><a href="/urunler/">Ürünler</a></li><li><a href="/profil/">Profil</a></li><li><a href="/bildirimler/">Bildirimler</a></li><li><a href="/ayarlar/">Ayarlar</a></li><li><a href="/dokumantasyon/">Belgeler</a></li><li><a href="/dokumantasyon/guvenlik/">Güvenlik</a></li><li><a href="/lisans/">Lisans</a></li><li><a href="https://github.com/fkircidevs/fkdev-admin">GitHub ↗</a></li><li><a href="https://ui.fkdev.sbs">ui.fkdev.sbs ↗</a></li></ul></nav>
+      <ul class="fk-fc-contact">
+        <li><button type="button" data-fk-copy="fkdevs" data-fk-msg="WhatsApp kullanıcı adı kopyalandı: fkdevs"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></span>fkdevs</button></li>
+        <li><a href="mailto:merhaba@fkdev.sbs"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>merhaba@fkdev.sbs</a></li>
+        <li><a href="mailto:ik@fkdev.sbs"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>ik@fkdev.sbs</a></li>
+        <li><a href="https://yukle.fkdev.sbs/" target="_blank" rel="noopener"><span class="fk-fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M6 9l6-6 6 6M4 20h16"/></svg></span>yukle.fkdev.sbs</a></li>
+      </ul>
+      <nav class="fk-fc-eco" aria-label="fkdev ekosistemi"><a href="https://www.fkdev.sbs/">fkdev.sbs</a><a href="https://ui.fkdev.sbs/">ui.fkdev.sbs</a><a href="https://admin.fkdev.sbs/" aria-current="true">admin.fkdev.sbs</a></nav>
+      <div class="fk-fc-bottom">
+        <p>© 2026 Furkan Kırcı · MIT</p>
+        <p class="fk-fc-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Bursa · Nerede isterseniz</p>
+        <button class="fk-fc-top" type="button" data-fk-top>Başa dön <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ui.fkdev.sbs/v2.4.1/fkdev-ui.min.js" integrity="sha384-M00Zh34vyulzgDN4UvQcDJteSAYjql+zh1KP3B8lMfPikmAoJLDzbKnjWiFHPsvT" crossorigin="anonymous" defer data-fk-yedek="fkdev-ui.min.js"></script>
+  <script src="/assets/admin.js?v=1.1.0" defer></script>
+</body>
+</html>
